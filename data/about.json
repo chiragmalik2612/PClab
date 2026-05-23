@@ -1,0 +1,12 @@
+{
+  "labName": "Advanced Biomaterials & Cognitive Engineering Lab",
+  "tagline": "Bridging Molecular Engineering and Neural Computing Systems",
+  "missionStatement": "Our lab focuses on the translation of tissue-engineered scaffolds, medical-grade extracellular matrices, and modern hardware-software interfaces to capture, quantify, and simulate biological intelligence.",
+  "researchInterests": [
+    "Downstream processing of Type I Medical-Grade Collagen",
+    "EEG signal processing and cognitive load quantification",
+    "Biocompatible polymer mechanics and tissue scaffolding",
+    "Affective computing and human-computer interactions"
+  ],
+  "heroImage": "/images/hero-lab.jpg"
+}

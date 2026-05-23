@@ -1,0 +1,27 @@
+[
+  {
+    "id": "car-1",
+    "title": "Postdoctoral Researcher in Neurotechnologies & EEG Analytics",
+    "type": "Postdoc",
+    "description": "Seeking a dedicated researcher to lead our hardware-software deployment pipeline for real-time artifact filtering and classification during active cognitive trials.",
+    "requirements": [
+      "Ph.D. in Biomedical Engineering, Neuro-engineering, or Computer Science",
+      "Proven experience with Python/MNE or C++ signal processing libraries",
+      "Familiarity with reactive web development frameworks is a major plus"
+    ],
+    "postedDate": "2026-05-01",
+    "deadline": "2026-07-15"
+  },
+  {
+    "id": "car-2",
+    "title": "Summer Research Intern — Biomaterial Isolation",
+    "type": "Internship",
+    "description": "Looking for enthusiastic undergraduate or integrated dual-degree students to assist with physical characterization, freeze-drying routines, and crosslinking assays.",
+    "requirements": [
+      "Enrolled in Biomedical Engineering, Biotechnology, or Chemical Engineering",
+      "Basic understanding of laboratory safety protocols and chemistry pipetting"
+    ],
+    "postedDate": "2026-04-20",
+    "deadline": "2026-06-01"
+  }
+]

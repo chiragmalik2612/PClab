@@ -1,0 +1,16 @@
+[
+  {
+    "id": "news-1",
+    "title": "Lab Secures Departmental Grant for Medical-Grade Collagen Downstream Purification",
+    "content": "We are thrilled to announce a new multi-year funding cycle to scale our high-purity collagen extraction pipelines for therapeutic testing.",
+    "date": "2026-05-10",
+    "category": "Research"
+  },
+  {
+    "id": "news-2",
+    "title": "Alex Rivera Wins Best Student Poster Award at NeuroTech 2026",
+    "content": "Alex presented our collaborative full-stack cognitive engine assessment framework and brought home the top prize in computing interfaces.",
+    "date": "2026-04-18",
+    "category": "Achievement"
+  }
+]

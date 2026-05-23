@@ -1,0 +1,22 @@
+[
+  {
+    "id": "pub-1",
+    "title": "Optimized Extraction and Mechanical Evaluation of Purified Type I Collagen Scaffolds for Soft Tissue Reconstruction",
+    "authors": ["Jenkins, S.", "Malik, C.", "Choudhary, P."],
+    "journal": "Journal of Biomedical Materials Research",
+    "year": 2026,
+    "doi": "10.1002/jbm.a.37000",
+    "pdfUrl": "#",
+    "tags": ["Collagen", "Biomaterials", "Tissue Engineering"]
+  },
+  {
+    "id": "pub-2",
+    "title": "A Full-Stack System Architecture for Real-Time Eriksen Flanker Task Analytics and Cognitive State Classification",
+    "authors": ["Rivera, A.", "Kumar, A.", "Jenkins, S."],
+    "journal": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+    "year": 2025,
+    "doi": "10.1109/TNSRE.2025.1234567",
+    "pdfUrl": "#",
+    "tags": ["EEG", "Cognitive Assessment", "Next.js"]
+  }
+]
