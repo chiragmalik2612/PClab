@@ -21,9 +21,9 @@ export default function RootLayout({
       {/* Background set to white, selection color set to #009966 */}
       <body className={`${inter.className} bg-white text-slate-900 flex flex-col min-h-screen antialiased selection:bg-[#009966] selection:text-white`}>
         <Navbar />
-        <main className="flex-grow w-full flex flex-col">
-          {children}
-        </main>
+        <main className="flex-grow w-full flex flex-col lab-gradient-bg">
+  {children}
+</main>
         <Footer />
       </body>
     </html>

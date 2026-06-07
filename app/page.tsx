@@ -103,7 +103,7 @@ export default function HomePage() {
             </div>
 
             {/* ADDED: shadow-lg rounded-md to the PI Card */}
-            <div className="bg-white border border-slate-100 flex flex-col md:flex-row group overflow-hidden rounded-md shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white border border-slate-100 flex flex-col md:flex-row group overflow-hidden  shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="w-full md:w-64 lg:w-72 aspect-square shrink-0 border-b md:border-b-0 md:border-r border-slate-100 bg-slate-50">
                 <img src={piData.image} alt={piData.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out" />
               </div>

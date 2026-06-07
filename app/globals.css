@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
-/* We rely on Tailwind v4 default styling. 
-  No custom Next.js dark mode boilerplate here.
-*/
+/* Subtle lab-themed gradient background */
+.lab-gradient-bg {
+  background-color: #ffffff;
+  background-image: radial-gradient(
+    at 50% -20%, 
+    rgba(0, 153, 102, 0.08) 0px, 
+    transparent 50%
+  );
+  background-attachment: fixed;
+}
