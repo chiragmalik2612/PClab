@@ -18,9 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full">
-      <body className={`${inter.className} bg-slate-50 text-slate-900 flex flex-col min-h-full`}>
+      {/* Background set to white, selection color set to #009966 */}
+      <body className={`${inter.className} bg-white text-slate-900 flex flex-col min-h-screen antialiased selection:bg-[#009966] selection:text-white`}>
         <Navbar />
-        <main className="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <main className="flex-grow w-full flex flex-col">
           {children}
         </main>
         <Footer />

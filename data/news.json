@@ -1,16 +1,29 @@
 [
   {
-    "id": "news-1",
-    "title": "Lab Secures Departmental Grant for Medical-Grade Collagen Downstream Purification",
-    "content": "We are thrilled to announce a new multi-year funding cycle to scale our high-purity collagen extraction pipelines for therapeutic testing.",
-    "date": "2026-05-10",
-    "category": "Research"
+    "id": "1",
+    "title": "Lab Secures Grant for Type I Collagen Downstream Processing",
+    "content": "Our team has been awarded a new research grant to advance the downstream processing of medical-grade collagen. This funding will support our upcoming summer internship program and accelerate the development of biocompatible scaffolds for soft robotics and tissue regeneration.",
+    "date": "May 10, 2026",
+    "category": "Research",
+    "imageUrl": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "link": "#"
   },
   {
-    "id": "news-2",
-    "title": "Alex Rivera Wins Best Student Poster Award at NeuroTech 2026",
-    "content": "Alex presented our collaborative full-stack cognitive engine assessment framework and brought home the top prize in computing interfaces.",
-    "date": "2026-04-18",
-    "category": "Achievement"
+    "id": "2",
+    "title": "Affective Computing Interface Presented at IEEE Symposium",
+    "content": "We successfully presented our latest hardware-software interface, capable of real-time cognitive load quantification via high-density EEG, at the Annual IEEE Cognitive Engineering Symposium in New York. The presentation was met with incredible enthusiasm from the global engineering community.",
+    "date": "April 22, 2026",
+    "category": "Event",
+    "imageUrl": "https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "link": "#"
+  },
+  {
+    "id": "3",
+    "title": "Outstanding Researcher Award Bestowed to Lab Members",
+    "content": "A huge congratulations to our team members for receiving the Outstanding Researcher Award for their breakthrough algorithms in real-time artifact rejection pipelines. Their work drastically reduces latency in cognitive feedback loops, paving the way for more responsive neural interfaces.",
+    "date": "March 15, 2026",
+    "category": "Achievement",
+    "imageUrl": "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "link": "#"
   }
 ]

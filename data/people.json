@@ -3,26 +3,151 @@
     "id": "1",
     "name": "Dr. Sarah Jenkins",
     "role": "PI",
-    "image": "/images/people/placeholder.jpg",
+    "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     "email": "s.jenkins@university.edu",
-    "bio": "Dr. Jenkins has over 15 years of experience researching extracellular dynamics and neural computing architectures.",
-    "education": [
-      "Ph.D. in Bioengineering - Stanford University",
-      "M.Tech in Biomedical Engineering - IIT Delhi"
-    ],
-    "googleScholar": "https://scholar.google.com",
-    "linkedin": "https://linkedin.com"
+    "bio": "Dr. Jenkins leads the Biomaterials and Cognitive Systems Lab. Her research focuses on synthesizing advanced hydrogel matrices and bridging them with high-density neural interfaces. She has published over 40 peer-reviewed papers on the intersection of materials science and neuroscience. Prior to joining the faculty, she completed her postdoctoral work at MIT.",
+    "education": ["Ph.D. Biomedical Engineering, MIT", "M.Sc. Materials Science, Stanford"],
+    "googleScholar": "#",
+    "linkedin": "#"
   },
   {
-    "id": "2",
-    "name": "Alex Rivera",
-    "role": "PhD Student",
-    "image": "/images/people/placeholder.jpg",
-    "email": "a.rivera@university.edu",
-    "bio": "Focusing on optimization algorithms for cleaning and extracting features from high-density multi-channel EEG headsets.",
-    "education": [
-      "B.Tech in Computer Science - VIT"
-    ],
-    "linkedin": "https://linkedin.com"
+    "id": "2", "name": "Alex Rivera", "role": "PhD",
+    "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "email": "arivera@university.edu", 
+    "bio": "Alex investigates real-time artifact rejection pipelines in multi-channel EEG systems. His work specifically targets noise reduction in ambulatory settings to enable mobile brain-computer interfaces. He is currently developing a new Python framework for automated signal cleaning. In his free time, he enjoys bouldering.", 
+    "education": ["M.Sc. Computer Science"], "linkedin": "#"
+  },
+  {
+    "id": "3", "name": "David Chen", "role": "PhD",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "email": "dchen@university.edu", 
+    "bio": "David focuses on the downstream processing of Type I Medical-Grade Collagen. He utilizes advanced cross-linking techniques to improve the tensile strength of tissue scaffolds. His goal is to create viable materials for soft robotics and artificial organ support. He previously interned at a leading biotech startup.", 
+    "education": ["M.Sc. Bioengineering"], "linkedin": "#"
+  },
+  {
+    "id": "4", "name": "Elena Rostova", "role": "PhD",
+    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "email": "erostova@university.edu", 
+    "bio": "Elena is developing affective computing interfaces for real-time cognitive feedback loops. Her thesis explores how machine learning models can predict user fatigue based on subtle biometric shifts. She works closely with the hardware team to optimize sensor placement. Elena is a recipient of the National Science Foundation Graduate Fellowship.", 
+    "education": ["M.Sc. Cognitive Science"], "linkedin": "#"
+  },
+  {
+    "id": "5", "name": "Marcus Johnson", "role": "PhD",
+    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "email": "mjohnson@university.edu", 
+    "bio": "Marcus is working on biocompatible polymer mechanics for in-vivo sensors. He synthesizes novel marine algae derivatives to create hydrogels that resist degradation over time. His research aims to extend the lifespan of implantable neural dust. He holds two patents related to polymer curing processes.", 
+    "education": ["M.Sc. Materials Science"], "linkedin": "#"
+  },
+  {
+    "id": "6", "name": "Sophia Martinez", "role": "PhD",
+    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "email": "smartinez@university.edu", 
+    "bio": "Sophia utilizes molecular dynamics (MD) to predict biomaterial integration rates. She runs large-scale computational simulations to understand how proteins bind to synthetic surfaces. Her predictive models help the lab narrow down viable hydrogel candidates before physical synthesis begins. She is passionate about open-source computational tools.", 
+    "education": ["M.Sc. Biophysics"], "linkedin": "#"
+  },
+  {
+    "id": "7", "name": "Priya Sharma", "role": "MTech",
+    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "email": "psharma@university.edu", 
+    "bio": "Priya is developing computational models for molecular docking of collagen structures. She analyzes the thermodynamic stability of various ligand-receptor interactions. Her work bridges the gap between software simulation and benchtop biology. After graduation, she plans to pursue a PhD in Computational Neuroscience.", 
+    "education": ["B.Tech Bioengineering"], "linkedin": "#", "googleScholar": "#"
+  },
+  {
+    "id": "8", "name": "Rahul Gupta", "role": "MTech",
+    "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "email": "rgupta@university.edu", 
+    "bio": "Rahul optimizes hardware bridges for high-density neural arrays. He designs custom PCBs that reduce latency between brain signal capture and software processing. His current project involves transitioning the lab's equipment to wireless protocols. He is an avid robotics enthusiast.", 
+    "education": ["B.Tech ECE"], "linkedin": "#"
+  },
+  {
+    "id": "9", "name": "Anita Desai", "role": "MTech",
+    "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "email": "adesai@university.edu", 
+    "bio": "Anita focuses on simulating cognitive loads using advanced machine learning models. She analyzes massive datasets of physiological responses to calibrate predictive algorithms. Her master's thesis evaluates the efficacy of different neural network architectures in affective computing. She previously worked as a data engineering intern.", 
+    "education": ["B.Tech CS"], "linkedin": "#"
+  },
+  {
+    "id": "10", "name": "Liam Smith", "role": "MSc",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "email": "lsmith@university.edu", 
+    "bio": "Liam studies the tensile strength of marine algae derivatives. He conducts daily mechanical testing on newly synthesized hydrogels to log their durability profiles. His data is crucial for the lab's soft robotics applications. He hopes to transition into the biomedical device industry after his degree.", 
+    "education": ["B.Sc. Chemistry"], "linkedin": "#"
+  },
+  {
+    "id": "11", "name": "Chloe Bennett", "role": "MSc",
+    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "email": "cbennett@university.edu", 
+    "bio": "Chloe is analyzing EEG signal decay in wet-electrode setups. She conducts human-participant trials to measure how long different conductive gels remain effective during prolonged cognitive tasks. Her findings help the lab optimize long-term recording sessions. She is a dedicated science communicator.", 
+    "education": ["B.Sc. Physics"], "linkedin": "#"
+  },
+  {
+    "id": "12", "name": "Noah Williams", "role": "MSc",
+    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "email": "nwilliams@university.edu", 
+    "bio": "Noah assesses biocompatibility markers in engineered tissues. He performs cell viability assays on the collagen scaffolds produced by the PhD students. His meticulous lab work ensures that all materials are safe for eventual in-vivo testing. Noah is also the lab's designated safety coordinator.", 
+    "education": ["B.Sc. Biology"], "linkedin": "#"
+  },
+  {
+    "id": "13", "name": "Sam Taylor", "role": "Intern",
+    "image": "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "email": "staylor@university.edu", 
+    "bio": "Sam is a summer REU student optimizing affective computing algorithms. He assists the PhD candidates in cleaning large datasets before feeding them into machine learning pipelines. This internship is his first exposure to neuroscience research. He is an active member of his university's coding club.", 
+    "education": ["Undergraduate Student"], "linkedin": "#"
+  },
+  {
+    "id": "14", "name": "Emma Davis", "role": "Intern",
+    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "email": "edavis@university.edu", 
+    "bio": "Emma assists with the daily synthesis of collagen hydrogels. She is learning foundational biomaterial bench skills, including proper sterilization and pipetting techniques. She plans to use this experience to apply for a bioengineering master's program. Emma is a competitive swimmer.", 
+    "education": ["Undergraduate Student"], "linkedin": "#"
+  },
+  {
+    "id": "15", "name": "Oliver Brown", "role": "Intern",
+    "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "email": "obrown@university.edu", 
+    "bio": "Oliver builds visualization dashboards for real-time EEG data. Using React and D3.js, he creates web tools that allow researchers to monitor cognitive load during experiments. His frontend engineering skills have significantly improved the lab's software interfaces. He enjoys designing interactive user experiences.", 
+    "education": ["Undergraduate Student"], "linkedin": "#"
+  },
+  {
+    "id": "16", "name": "Mia Wilson", "role": "Intern",
+    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "email": "mwilson@university.edu", 
+    "bio": "Mia conducts comprehensive literature reviews on neuro-tech applications. She organizes the lab's publication database and helps draft introductory sections for upcoming papers. This role gives her a deep understanding of current trends in cognitive engineering. She is an aspiring technical writer.", 
+    "education": ["Undergraduate Student"], "linkedin": "#"
+  },
+  {
+    "id": "17", "name": "Lucas Moore", "role": "Intern",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "email": "lmoore@university.edu", 
+    "bio": "Lucas helps maintain lab hardware and testing equipment. He handles the calibration of microscopes and the soldering of custom EEG headset components. His hands-on mechanical skills keep the lab's physical infrastructure running smoothly. He plans to double major in Mechanical and Electrical Engineering.", 
+    "education": ["Undergraduate Student"], "linkedin": "#"
+  },
+  {
+    "id": "18", "name": "Dr. Alan Turing", "role": "Alumni",
+    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "email": "alan@alumni.edu", 
+    "bio": "Alan was the lab's first postdoctoral researcher, focusing on the mathematical models underlying affective computing. He developed the core artifact rejection algorithms the lab still uses today. He is now a Principal Data Scientist at DeepMind, working on artificial general intelligence. He frequently returns to give guest lectures.", 
+    "education": ["Ph.D. Cognitive Systems"], "linkedin": "#"
+  },
+  {
+    "id": "19", "name": "Dr. Grace Hopper", "role": "Alumni",
+    "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "email": "grace@alumni.edu", 
+    "bio": "Grace completed her PhD in the lab, pioneering the integration of wireless data transmission for high-density EEG caps. Her dissertation received the university's highest research honors. She is currently an Assistant Professor at MIT, running her own neuro-tech lab. We continue to collaborate with her team on large-scale grants.", 
+    "education": ["Ph.D. Computer Science"], "linkedin": "#"
+  },
+  {
+    "id": "20", "name": "Dr. John von Neumann", "role": "Alumni",
+    "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "email": "john@alumni.edu", 
+    "bio": "John's PhD research focused on the computational biophysics of collagen folding. His simulation data laid the groundwork for the lab's current soft robotics projects. He transitioned into the finance sector after graduation. He is now a Lead Quantitative Analyst at Two Sigma, applying his modeling skills to the stock market.", 
+    "education": ["Ph.D. Mathematics"], "linkedin": "#"
+  },
+  {
+    "id": "21", "name": "Ada Lovelace", "role": "Alumni",
+    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "email": "ada@alumni.edu", 
+    "bio": "Ada was an MTech student who designed the first iteration of the lab's internal data visualization dashboard. Her clean, efficient code base made processing complex EEG data much faster for the entire team. She was heavily recruited upon graduation. She is currently working as a Senior Software Engineer at Google Brain.", 
+    "education": ["M.Tech Computer Science"], "linkedin": "#"
   }
 ]

@@ -1,7 +1,8 @@
 export interface Person {
   id: string;
   name: string;
-  role: 'PI' | 'Postdoc' | 'PhD Student' | 'Master Student' | 'Alumni';
+  // Updated with all the specific academic roles
+  role: 'PI' | 'PhD' | 'Project Staff' | 'Intern' | 'MTech' | 'MSc' | 'BTech' | 'Alumni';
   image: string;
   email: string;
   bio: string;
@@ -25,8 +26,10 @@ export interface NewsItem {
   id: string;
   title: string;
   content: string;
-  date: string; // YYYY-MM-DD
+  date: string;
   category: 'Achievement' | 'Research' | 'Event' | 'Media';
+  imageUrl: string; // Added for the left-side image
+  link: string;     // Added for the "Read Full Story" link
 }
 
 export interface Career {
@@ -49,10 +52,17 @@ export interface ContactInfo {
   officeLocation: string;
 }
 
+export interface Expertise {
+  category: string;
+  title: string;
+  description: string;
+  image: string;
+}
+
 export interface AboutData {
   labName: string;
   tagline: string;
   missionStatement: string;
-  researchInterests: string[];
   heroImage: string;
+  expertise: Expertise[];
 }

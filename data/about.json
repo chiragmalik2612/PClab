@@ -1,12 +1,32 @@
 {
-  "labName": "Advanced Biomaterials & Cognitive Engineering Lab",
-  "tagline": "Bridging Molecular Engineering and Neural Computing Systems",
-  "missionStatement": "Our lab focuses on the translation of tissue-engineered scaffolds, medical-grade extracellular matrices, and modern hardware-software interfaces to capture, quantify, and simulate biological intelligence.",
-  "researchInterests": [
-    "Downstream processing of Type I Medical-Grade Collagen",
-    "EEG signal processing and cognitive load quantification",
-    "Biocompatible polymer mechanics and tissue scaffolding",
-    "Affective computing and human-computer interactions"
-  ],
-  "heroImage": "/images/hero-lab.jpg"
+  "labName": "Advanced Biomaterials Lab",
+  "tagline": "Laboratory for Tissue Engineering and Medical Research",
+  "missionStatement": "Our facility focuses on the translation of tissue-engineered scaffolds, medical-grade extracellular matrices, and modern hardware-software interfaces.",
+  "heroImage": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+  "expertise": [
+    {
+      "category": "Biomaterials",
+      "title": "Collagen Scaffolding",
+      "description": "Downstream processing of Type I Medical-Grade Collagen for structural tissue replacement and regeneration.",
+      "image": "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "category": "Neuro-Tech",
+      "title": "EEG Signal Processing",
+      "description": "Real-time cognitive load quantification and hardware-software interface deployment for active trials.",
+      "image": "https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "category": "Polymers",
+      "title": "Biocompatible Mechanics",
+      "description": "Synthesizing marine algae derivatives and advanced hydrogels for soft robotics applications.",
+      "image": "https://images.unsplash.com/photo-1614935151651-0bea6508ab6b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "category": "Computing",
+      "title": "Affective Computing",
+      "description": "Bridging human-computer interactions through simulating and quantifying biological intelligence.",
+      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    }
+  ]
 }
