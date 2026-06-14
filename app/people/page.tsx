@@ -1,124 +1,208 @@
-import { Person } from '@/types';
-import peopleDataRaw from '@/data/people.json';
+"use client";
 
-const peopleData = peopleDataRaw as Person[];
+import { useEffect, useRef, useState } from "react";
+import peopleDataRaw from "@/data/people.json";
 
-const roleCategories = [
-  { key: 'PhD', title: 'PhD Candidates' },
-  { key: 'Project Staff', title: 'Project Staff' },
-  { key: 'MTech', title: 'M.Tech Students' },
-  { key: 'MSc', title: 'M.Sc Students' },
-  { key: 'BTech', title: 'B.Tech Students' },
-  { key: 'Intern', title: 'Research Interns' },
-  { key: 'Alumni', title: 'Lab Alumni' }
-];
+// Local types adjusted for the new Alumni fields
+interface Person {
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+  bio: string | null;
+  image: string;
+  linkedin: string | null;
+  googleScholar?: string | null;
+  alumniRole?: string | null;
+  alumniCollege?: string | null;
+}
+
+// --- Minimal Scroll Animation Wrapper ---
+const FadeIn = ({ children, delay = 0, direction = "up" }: { children: React.ReactNode, delay?: number, direction?: "up" | "left" | "right" }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.15 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const translateClasses = {
+    up: "translate-y-12",
+    left: "-translate-x-12",
+    right: "translate-x-12",
+  };
+
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-1000 ease-out ${
+        isVisible ? "opacity-100 translate-y-0 translate-x-0" : `opacity-0 ${translateClasses[direction]}`
+      }`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  );
+};
 
 export default function PeoplePage() {
-  const principalInvestigators = peopleData.filter(person => person.role === 'PI');
-
-  return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16 w-full">
-      
-      <div className="border-b border-slate-200 pb-6 mb-10">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4">Lab Members</h1>
-        <div className="w-16 h-1.5 bg-[#009966] shadow-sm"></div>
-      </div>
-
-      <div className="space-y-10">
-        
-       {/* --- 1. PRINCIPAL INVESTIGATOR SECTION --- */}
-{principalInvestigators.length > 0 && (
-  <section className="mb-16">
-    <h2 className="text-[#009966] font-bold tracking-widest uppercase text-xs mb-8">
-      Principal Investigator
-    </h2>
-    <div className="space-y-8">
-      {principalInvestigators.map((pi) => (
-        <div key={pi.id} className="flex flex-col md:flex-row group overflow-hidden">
-          
-          {/* Image Container */}
-          <div className="w-full md:w-64 lg:w-72 aspect-square shrink-0 border-b md:border-b-0 md:border-r border-slate-200 bg-slate-100">
-            <img 
-              src={pi.image} 
-              alt={pi.name} 
-              // REMOVED: grayscale and group-hover:grayscale-0 for constant color
-              className="w-full h-full object-cover transition-all duration-700 ease-in-out"
-            />
-          </div>
-
-          {/* Text Content */}
-          <div className="p-6 md:p-8 flex flex-col justify-center flex-1">
-            <div className="mb-4">
-              <h3 className="text-2xl font-bold text-slate-900 mb-1">{pi.name}</h3>
-              <a href={`mailto:${pi.email}`} className="text-[#009966] text-sm font-medium hover:underline">
-                {pi.email}
-              </a>
-            </div>
-            
-            <p className="text-slate-600 text-base leading-relaxed mb-6 text-[15px]">
-              {pi.bio}
-            </p>
-
-            <div className="flex space-x-6 pt-4 mt-auto text-xs font-bold uppercase tracking-widest">
-              {pi.googleScholar && (
-                <a href={pi.googleScholar} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-[#009966] transition-colors">Scholar</a>
-              )}
-              {pi.linkedin && (
-                <a href={pi.linkedin} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-[#009966] transition-colors">LinkedIn</a>
-              )}
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </section>
-)}
-
-       {/* TEAM GRID */}
-{roleCategories.map((category) => {
-  const membersInRole = peopleData.filter(person => person.role === category.key);
-  if (membersInRole.length === 0) return null;
-
-  return (
-    <section key={category.key} className="pt-8 border-t border-slate-200">
-      <h2 className="text-[#009966] font-bold tracking-widest uppercase text-xs mb-5">{category.title}</h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-        {membersInRole.map((member) => (
-         <div key={member.id} className="bg-white border border-slate-100 flex flex-col group shadow-md hover:shadow-xl hover:-translate-y-1 rounded-md transition-all duration-300">
+  const peopleData = peopleDataRaw as Person[];
   
-  {/* REMOVED: grayscale and group-hover:grayscale-0 */}
-  <div className="aspect-square w-full border-b border-slate-100 overflow-hidden bg-slate-50 rounded-t-md">
-    <img 
-      src={member.image} 
-      alt={member.name} 
-      className="w-full h-full object-cover opacity-100 transition-opacity duration-700" 
-    />
-  </div>
+  // Extract PI
+  const piData = peopleData.find((person) => person.role === "PI");
 
-  <div className="p-4 flex flex-col flex-1">
-    <div className="mb-2">
-      <h3 className="text-base font-bold text-slate-900 group-hover:text-[#009966] transition-colors leading-tight">
-        {member.name}
-      </h3>
-      <a href={`mailto:${member.email}`} className="text-[#009966] text-[12px] font-bold hover:underline block mt-0.5">
-        {member.email}
-      </a>
-    </div>
-    
-    <p className="text-slate-600 text-[14px] leading-relaxed line-clamp-3 mb-3">
-      {member.bio}
-    </p>
-    
-    <div className="flex space-x-3 pt-3 mt-auto border-t border-slate-50 text-[10px] font-bold uppercase tracking-widest">
-      {member.linkedin && <a href={member.linkedin} className="text-[#009966] hover:text-slate-900 transition-colors">LinkedIn</a>}
-    </div>
-  </div>
-</div>
-        ))}
-      </div>
-    </section>
-  );
-})}
+  // EXACT Categories mapped to your updated JSON roles
+  const roleCategories = [
+    { title: 'PhD Candidates', key: 'PhD' },
+    { title: 'Project Staff', key: 'Project Staff' },
+    { title: 'M.Tech Students', key: 'MTech' },
+    { title: 'B.Tech Students', key: 'BTech' },
+    { title: 'Interns', key: 'Intern' },
+    { title: 'Alumni', key: 'Alumni' },
+  ];
+
+  return (
+    <div className="w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#009966]/10 via-white/50 to-white min-h-screen overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 w-full">
+        
+        {/* --- PAGE HEADER --- */}
+        <FadeIn direction="up">
+          <div className="pb-6 mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">Our Team</h1>
+            <div className="w-16 h-1.5 bg-[#bd1e24] shadow-sm"></div>
+          </div>
+        </FadeIn>
+
+        {/* --- 1. PRINCIPAL INVESTIGATOR SECTION --- */}
+        {piData && (
+          <FadeIn direction="up" delay={100}>
+            <div className="mb-24">
+              <h2 className="text-[#009966] font-bold tracking-widest uppercase text-xs mb-5">
+                Principal Investigator
+              </h2>
+              <div className="bg-white/60 backdrop-blur-sm flex flex-col md:flex-row group shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,153,102,0.12)] transition-shadow duration-500">
+                
+                <div className="w-full md:w-1/3 lg:w-1/4 aspect-[3/4] md:aspect-auto shrink-0 bg-slate-100 overflow-hidden">
+                  <img 
+                    src={piData.image} 
+                    alt={piData.name} 
+                    className="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 transition-all duration-700 ease-in-out" 
+                  />
+                </div>
+
+                <div className="p-8 md:p-12 flex flex-col justify-center flex-1">
+                  <div className="mb-6">
+                    <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-2">
+                      {piData.name}
+                    </h3>
+                    <a href={`mailto:${piData.email}`} className="text-[#009966] text-sm font-bold hover:underline transition-colors block truncate">
+                      {piData.email}
+                    </a>
+                  </div>
+                  
+                  <p className="text-slate-700 text-base md:text-lg leading-relaxed mb-8">
+                    {piData.bio}
+                  </p>
+
+                  <div className="flex space-x-6 pt-6 mt-auto border-t border-slate-200/60 text-xs font-bold uppercase tracking-widest">
+                    {piData.googleScholar && (
+                      <a href={piData.googleScholar} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-[#bd1e24] transition-colors">Scholar</a>
+                    )}
+                    {piData.linkedin && (
+                      <a href={piData.linkedin} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-[#bd1e24] transition-colors">LinkedIn</a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        )}
+
+        {/* --- 2. LAB MEMBERS (STRICTLY 4 PER ROW) --- */}
+        <div className="space-y-24">
+          {roleCategories.map((category) => {
+            const membersInRole = peopleData.filter(person => person.role === category.key);
+            
+            if (membersInRole.length === 0) return null;
+
+            return (
+              <section key={category.key}>
+                <FadeIn direction="up">
+                  <h2 className="text-[#009966] font-bold tracking-widest uppercase text-xs mb-6">
+                    {category.title}
+                  </h2>
+                </FadeIn>
+                
+                {/* FORCED 4 COLUMNS: lg, xl, and 2xl all set to grid-cols-4 just to be safe */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-6 lg:gap-8">
+                  {membersInRole.map((member, memIndex) => (
+                    <FadeIn key={member.id} direction="up" delay={(memIndex % 4) * 100}>
+                      <div className="bg-white/60 backdrop-blur-sm flex flex-col group shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgb(0,153,102,0.12)] hover:-translate-y-1 transition-all duration-300 h-full">
+                        
+                        <div className="aspect-[3/4] w-full overflow-hidden bg-slate-100">
+                          <img 
+                            src={member.image} 
+                            alt={member.name} 
+                            className="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" 
+                          />
+                        </div>
+
+                        <div className="p-6 flex flex-col flex-1">
+                          <div className="mb-4">
+                            <h3 className="text-lg font-bold tracking-tight text-slate-900 group-hover:text-[#009966] transition-colors leading-tight truncate">
+                              {member.name}
+                            </h3>
+                            <a href={`mailto:${member.email}`} className="text-[#009966] text-[13px] font-bold hover:underline block mt-1 truncate">
+                              {member.email}
+                            </a>
+                            
+                            {/* ALUMNI METADATA */}
+                            {member.role === "Alumni" && (member.alumniRole || member.alumniCollege) && (
+                              <div className="mt-3 flex flex-col gap-1 border-l-2 border-[#bd1e24] pl-2">
+                                {member.alumniRole && (
+                                  <span className="text-[11px] font-bold text-slate-700 uppercase tracking-wide leading-tight">
+                                    {member.alumniRole}
+                                  </span>
+                                )}
+                                {member.alumniCollege && (
+                                  <span className="text-[11px] text-slate-500 leading-tight">
+                                    {member.alumniCollege}
+                                  </span>
+                                )}
+                              </div>
+                            )}
+                          </div>
+                          
+                          {/* 5 lines of bio text */}
+                          <p className="text-slate-600 text-sm leading-relaxed line-clamp-5 mb-6 flex-1">
+                            {member.bio}
+                          </p>
+                          
+                          <div className="flex space-x-4 pt-4 border-t border-slate-200/60 text-[11px] font-bold uppercase tracking-widest mt-auto">
+                            {member.linkedin && (
+                              <a href={member.linkedin} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-[#bd1e24] transition-colors">LinkedIn</a>
+                            )}
+                          </div>
+                        </div>
+
+                      </div>
+                    </FadeIn>
+                  ))}
+                </div>
+              </section>
+            );
+          })}
+        </div>
 
       </div>
     </div>
