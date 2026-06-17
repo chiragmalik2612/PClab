@@ -1,29 +1,20 @@
 [
   {
     "id": "1",
-    "title": "Lab Secures Grant for Type I Collagen Downstream Processing",
-    "content": "Our team has been awarded a new research grant to advance the downstream processing of medical-grade collagen. This funding will support our upcoming summer internship program and accelerate the development of biocompatible scaffolds for soft robotics and tissue regeneration.",
-    "date": "May 10, 2026",
-    "category": "Research",
-    "imageUrl": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "title": "Poster Presentation: Protein Isolation from Spirulina platensis",
+    "content": "A preliminary version of our work focusing on “Isolation and functional evaluation of valuable proteins from Spirulina platensis for sustainable bioprocessing” was presented as a poster at the International Conference on Advances in Biotechnology, Bioprocessing, and Structural Biology at IIT Roorkee in 2025. The study aimed at a lab-scale economic evaluation of mechanical and alkaline extraction and comparative precipitation of proteins. The precipitates showed characteristics comparable to commercial whey protein, indicating their potential as an alternative vegan protein source.",
+    "date": "2025",
+    "category": "Presentation",
+    "imageUrl": "/updates/event1.jpg",
     "link": "#"
   },
   {
     "id": "2",
-    "title": "Affective Computing Interface Presented at IEEE Symposium",
-    "content": "We successfully presented our latest hardware-software interface, capable of real-time cognitive load quantification via high-density EEG, at the Annual IEEE Cognitive Engineering Symposium in New York. The presentation was met with incredible enthusiasm from the global engineering community.",
-    "date": "April 22, 2026",
-    "category": "Event",
-    "imageUrl": "https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "link": "#"
-  },
-  {
-    "id": "3",
-    "title": "Outstanding Researcher Award Bestowed to Lab Members",
-    "content": "A huge congratulations to our team members for receiving the Outstanding Researcher Award for their breakthrough algorithms in real-time artifact rejection pipelines. Their work drastically reduces latency in cognitive feedback loops, paving the way for more responsive neural interfaces.",
-    "date": "March 15, 2026",
-    "category": "Achievement",
-    "imageUrl": "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "title": "Oral Presentation at APA BIOFORUM, IIT Mandi",
+    "content": "Hritick Gyan Verma delivered an oral presentation titled “Waste to Biomaterial: Targeted Recovery of Type I Collagen from Porcine Upper Dermis for Hydrogel Engineering” at the APA BIOFORUM held at IIT Mandi (May 22-23). The research, co-authored with Dr. Poonam Choudhary and Dr. Pravindra Kumar, highlights sustainable recovery methods for developing engineered hydrogels from biological waste.",
+    "date": "May 22, 2026",
+    "category": "Presentation",
+    "imageUrl": "/updates/event2.jpg",
     "link": "#"
   }
 ]

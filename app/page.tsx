@@ -89,43 +89,43 @@ export default function HomePage() {
 
             {/* Right Column: 2x2 Image Grid */}
             <div className="lg:col-span-5 grid grid-cols-2 gap-4">
-              <FadeIn direction="left" delay={200}>
-                <div className="bg-white overflow-hidden aspect-square shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,153,102,0.15)] transition-shadow duration-500 group">
-                  <img
-                    src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                    alt="Lab Work"
-                    className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
-                  />
-                </div>
-              </FadeIn>
-              <FadeIn direction="left" delay={350}>
-                <div className="bg-white overflow-hidden aspect-square shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,153,102,0.15)] transition-shadow duration-500 group mt-0 lg:mt-8">
-                  <img
-                    src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                    alt="Biomaterials"
-                    className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
-                  />
-                </div>
-              </FadeIn>
-              <FadeIn direction="left" delay={500}>
-                <div className="bg-white overflow-hidden aspect-square shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,153,102,0.15)] transition-shadow duration-500 group lg:-mt-8">
-                  <img
-                    src="https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                    alt="Cognitive Tech"
-                    className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
-                  />
-                </div>
-              </FadeIn>
-              <FadeIn direction="left" delay={650}>
-                <div className="bg-white overflow-hidden aspect-square shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,153,102,0.15)] transition-shadow duration-500 group">
-                  <img
-                    src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                    alt="Microscopy"
-                    className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
-                  />
-                </div>
-              </FadeIn>
-            </div>
+  <FadeIn direction="left" delay={200}>
+    <div className="bg-white overflow-hidden aspect-square shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,153,102,0.15)] transition-shadow duration-500 group">
+      <img
+        src="/hero/hero1.jpg" // Updated to local image
+        alt="Lab Work"
+        className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
+      />
+    </div>
+  </FadeIn>
+  <FadeIn direction="left" delay={350}>
+    <div className="bg-white overflow-hidden aspect-square shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,153,102,0.15)] transition-shadow duration-500 group mt-0 lg:mt-8">
+      <img
+        src="/hero/hero2.jpg" // Updated to local image
+        alt="Biomaterials"
+        className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
+      />
+    </div>
+  </FadeIn>
+  <FadeIn direction="left" delay={500}>
+    <div className="bg-white overflow-hidden aspect-square shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,153,102,0.15)] transition-shadow duration-500 group lg:-mt-8">
+      <img
+        src="/hero/hero3.jpg" // Updated to local image
+        alt="Cognitive Tech"
+        className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
+      />
+    </div>
+  </FadeIn>
+  <FadeIn direction="left" delay={650}>
+    <div className="bg-white overflow-hidden aspect-square shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,153,102,0.15)] transition-shadow duration-500 group">
+      <img
+        src="/hero/hero4.jpg" // Updated to local image
+        alt="Microscopy"
+        className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
+      />
+    </div>
+  </FadeIn>
+</div>
 
           </div>
         </div>

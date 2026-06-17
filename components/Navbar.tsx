@@ -13,8 +13,9 @@ export default function Navbar() {
     { name: 'About', href: '/about' },
     { name: 'People', href: '/people' },
     { name: 'Projects', href: '/projects' },
+    { name: 'Facilities', href: '/facilities' }, // <-- NEW FACILITIES TAB
     { name: 'Publications', href: '/publications' },
-    { name: 'News', href: '/news' },
+    { name: 'Updates', href: '/updates' },
     { name: 'Careers', href: '/careers' },
   ];
 
