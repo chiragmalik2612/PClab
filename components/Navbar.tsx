@@ -28,7 +28,7 @@ export default function Navbar() {
   const isResearchActive = researchDropdown.some(link => pathname === link.href);
 
   return (
-    <nav className="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200 shadow-sm relative">
+    <nav className="bg-white/90 backdrop-blur-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
@@ -66,8 +66,8 @@ export default function Navbar() {
                 <svg className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
               </button>
               
-              {/* Dropdown Menu (Sharp edges, shadow, opacity fade) */}
-              <div className="absolute top-full left-0 mt-0 w-56 bg-white/95 backdrop-blur-md border border-slate-200 shadow-[0_8px_30px_rgb(0,0,0,0.08)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform translate-y-2 group-hover:translate-y-0">
+              {/* Dropdown Menu (Flat design, no shadow) */}
+              <div className="absolute top-full left-0 mt-0 w-56 bg-white border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform translate-y-2 group-hover:translate-y-0">
                 <div className="py-2">
                   {researchDropdown.map((link) => (
                     <Link
@@ -105,7 +105,7 @@ export default function Navbar() {
           <div className="hidden md:block flex-shrink-0">
             <Link
               href="/contact"
-              className="bg-[#009966] hover:bg-[#007a52] text-white px-6 py-2.5 text-sm font-bold tracking-wide transition-colors shadow-sm"
+              className="bg-[#009966] hover:bg-[#007a52] text-white px-6 py-2.5 text-sm font-bold tracking-wide transition-colors"
             >
               Contact Us
             </Link>
@@ -133,7 +133,7 @@ export default function Navbar() {
 
       {/* --- MOBILE MENU DROPDOWN --- */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-200 shadow-lg">
+        <div className="md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-200">
           <div className="px-4 pt-4 pb-6 space-y-1">
             
             {/* Mobile Home */}
@@ -192,7 +192,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-center bg-[#009966] hover:bg-[#007a52] text-white px-6 py-3.5 text-base font-bold tracking-wide transition-colors shadow-sm"
+                className="block w-full text-center bg-[#009966] hover:bg-[#007a52] text-white px-6 py-3.5 text-base font-bold tracking-wide transition-colors"
               >
                 Contact Us
               </Link>
