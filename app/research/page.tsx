@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 // --- Minimal Scroll Animation Wrapper ---
 const FadeIn = ({ children, delay = 0, direction = "up" }: { children: React.ReactNode, delay?: number, direction?: "up" | "left" | "right" }) => {
@@ -40,7 +41,7 @@ const FadeIn = ({ children, delay = 0, direction = "up" }: { children: React.Rea
   );
 };
 
-export default function AboutPage() {
+export default function ResearchAreasPage() {
   const researchAreas = [
     {
       title: "1. Algal Bioproducts Engineering",
@@ -52,7 +53,13 @@ export default function AboutPage() {
         "Process optimization for sustainable biomass production",
         "Industrial applications of algal bioproducts"
       ],
-      img: "https://images.unsplash.com/photo-1614935151651-0bea6508ab6b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      // 4 Images for the 2x2 Grid
+      images: [
+        "/research/algae1.jpg",
+        "/research/algae2.jpg",
+        "/research/algae3.jpg",
+        "/research/algae4.jpg"
+      ]
     },
     {
       title: "2. Regenerative Biomaterials and Protein Hydrogels",
@@ -64,7 +71,13 @@ export default function AboutPage() {
         "Structure–function relationships in biomaterials",
         "Translational approaches for regenerative healthcare"
       ],
-      img: "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      // 4 Images for the 2x2 Grid
+      images: [
+        "/research/bio1.jpg",
+        "/research/bio2.jpg",
+        "/research/bio3.jpg",
+        "/research/bio4.jpg"
+      ]
     },
     {
       title: "3. Carbon Capture and Biomass Conversion",
@@ -76,7 +89,13 @@ export default function AboutPage() {
         "Bio-crude and value-added product generation",
         "Carbon-negative and climate-resilient bioprocesses"
       ],
-      img: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      // 4 Images for the 2x2 Grid
+      images: [
+        "/research/carbon1.jpg",
+        "/research/carbon2.jpg",
+        "/research/carbon3.jpg",
+        "/research/carbon4.jpg"
+      ]
     },
     {
       title: "4. Phycoremediation and Resource Recovery",
@@ -88,40 +107,20 @@ export default function AboutPage() {
         "Resource recovery from waste streams",
         "Sustainable environmental biotechnology"
       ],
-      img: "https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      // 4 Images for the 2x2 Grid
+      images: [
+        "/research/phyco1.jpg",
+        "/research/phyco2.jpg",
+        "/research/phyco3.jpg",
+        "/research/phyco4.jpg"
+      ]
     }
   ];
 
   return (
     <div className="w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#009966]/10 via-white/50 to-white overflow-hidden min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 w-full">
-        
-        {/* --- PAGE HEADER & INTRO --- */}
-        <FadeIn direction="up">
-          <div className="pb-10 mb-20 flex flex-col items-center text-center max-w-4xl mx-auto">
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6">
-              About Us
-            </h1>
-            
-            {/* Centered red accent line */}
-            <div className="w-24 h-1.5 bg-[#bd1e24] mb-10 mx-auto"></div>
-
-            {/* Seamless, borderless text sitting directly on the gradient */}
-            <div className="space-y-6 text-slate-700 leading-relaxed text-lg md:text-xl font-medium">
-              <p>
-                Our laboratory is dedicated to developing sustainable biotechnological solutions at the intersection of bioresource engineering, regenerative biomaterials, and environmental sustainability.
-              </p>
-              <p>
-                Through an interdisciplinary approach, we integrate biological systems, materials science, and process engineering to address challenges in healthcare, carbon management, renewable resource utilization, and environmental remediation.
-              </p>
-              <p>
-                The research activities of the laboratory focus on transforming biological resources into high-value products and technologies that contribute to a circular bioeconomy. By combining fundamental science with translational research, we aim to develop scalable solutions for regenerative medicine, carbon-neutral bioprocesses, and sustainable resource recovery.
-              </p>
-            </div>
-
-          </div>
-        </FadeIn>
+      
 
         {/* --- ALTERNATING RESEARCH AREAS SECTION --- */}
         <div className="space-y-24 md:space-y-32 mt-10">
@@ -134,15 +133,24 @@ export default function AboutPage() {
                 className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} gap-10 lg:gap-16 items-center group`}
               >
                 
-                {/* IMAGE HALF */}
+                {/* 2x2 IMAGE GRID HALF */}
                 <div className="w-full md:w-1/2">
                   <FadeIn direction={isEven ? "right" : "left"} delay={100}>
-                    <div className="w-full aspect-[4/3] bg-slate-100 overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,153,102,0.15)] transition-shadow duration-500">
-                      <img 
-                        src={area.img} 
-                        alt={area.title} 
-                        className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" 
-                      />
+                    <div className="grid grid-cols-2 gap-3 md:gap-4">
+                      {area.images.map((imgSrc, imgIndex) => (
+                        <div 
+                          key={imgIndex} 
+                          className="w-full aspect-[4/3] relative bg-slate-100 overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,153,102,0.15)] transition-shadow duration-500 group/img"
+                        >
+                          <Image 
+                            src={imgSrc} 
+                            alt={`${area.title} Image ${imgIndex + 1}`} 
+                            fill
+                            className="object-cover grayscale-[20%] group-hover/img:grayscale-0 group-hover/img:scale-105 transition-all duration-700 ease-in-out" 
+                            sizes="(max-w-768px) 50vw, 25vw"
+                          />
+                        </div>
+                      ))}
                     </div>
                   </FadeIn>
                 </div>
@@ -150,7 +158,6 @@ export default function AboutPage() {
                 {/* CONTENT HALF */}
                 <div className="w-full md:w-1/2 flex flex-col justify-center">
                   <FadeIn direction="up" delay={200}>
-                    {/* Removed bg-white/40, backdrop-blur, p-6/p-10, and shadow entirely. Now it sits on the page directly. */}
                     <div className="md:px-4 lg:px-8">
                       <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 mb-4">
                         {area.title}

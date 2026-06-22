@@ -1,6 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import facilitiesDataRaw from "@/data/facilities.json";
+
+// Define the type for your facility items
+interface Facility {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+}
 
 // --- Minimal Scroll Animation Wrapper ---
 const FadeIn = ({
@@ -51,111 +60,15 @@ const FadeIn = ({
 };
 
 export default function FacilitiesPage() {
-const facilities = [
-  {
-    id: "laminar",
-    name: "Laminar Air Flow",
-    image: "/instrum/laminar.jpg",
-    description:
-      "Provides a strictly controlled, sterile work environment essential for sensitive biological processes. It is utilized daily for cell culture maintenance, media preparation, and avoiding cross-contamination during biomaterial processing.",
-  },
-  {
-    id: "sds",
-    name: "SDS-PAGE Electrophoresis System",
-    image: "/instrum/SDS.jpg",
-    description:
-      "The SDS-PAGE system is used for the separation and characterization of proteins based on their molecular weight. It supports the analysis of algal proteins, collagen extracts, and other biomolecules for assessing purity, molecular integrity, and downstream processing efficiency.",
-  },
-  {
-    id: "genexy",
-    name: "Algal Cultivation Facility",
-    image: "/instrum/genexyIncub.jpg",
-    description:
-      "Our laboratory is equipped with controlled cultivation systems including growth chambers, shaker incubators, and laboratory-scale photobioreactors for the growth and maintenance of diverse microalgal strains.",
-  },
-  {
-    id: "helix",
-    name: "Collagen Extraction & Bioprocessing Facility",
-    image: "/instrum/helixIncub.jpg",
-    description:
-      "The laboratory is equipped for the extraction, purification, and recovery of collagen from biological feedstocks using chemical, enzymatic, and process-based approaches.",
-  },
-  {
-    id: "oven",
-    name: "Hot Air Oven",
-    image: "/instrum/hotairoven.jpg",
-    description:
-      "The hot air oven is used for controlled drying, sterilization, and thermal processing of laboratory materials and biological samples. It supports sample preparation, moisture analysis, and processing workflows associated with algal biomass, biomaterials, and bioproduct development.",
-  },
-  {
-    id: "min80",
-    name: "Cold Storage Facility (-80°C, -20°C and 4°C)",
-    image: "/instrum/min80.jpg",
-    description:
-      "The cold storage facility ensures safe preservation of biological samples, cultures, reagents, proteins, and biomaterials under controlled temperature conditions. It supports long-term storage and maintenance of algal strains, collagen preparations, and research materials essential for experimental reproducibility.",
-  },
-  {
-    id: "microscope",
-    name: "Microscopy & Imaging Facility",
-    image: "/instrum/Microscope.jpg",
-    description:
-      "Microscopy facilities support the observation and analysis of algal morphology, cellular structures, and biomaterial architectures.",
-  },
-  {
-    id: "centrifuge",
-    name: "Refrigerated Centrifuge",
-    image: "/instrum/centrifuge.jpg",
-    description:
-      "The refrigerated centrifuge facilitates efficient separation and recovery of cells, proteins, and biomolecules under controlled temperature conditions. It is routinely employed in algal biomass harvesting, collagen purification, and downstream bioprocessing workflows.",
-  },
-  {
-    id: "spectro",
-    name: "UV–Visible Spectrophotometer",
-    image: "/instrum/spectro.jpg",
-    description:
-      "The UV–Visible spectrophotometer enables rapid quantitative analysis of biological samples through absorbance-based measurements. It is routinely used for monitoring algal growth, estimating biomolecule concentrations, and characterizing proteins, pigments, and other bioactive compounds.",
-  },
-  {
-    id: "photobioreactor",
-    name: "Photobioreactor System",
-    image: "/instrum/photobioreactor.jpg",
-    description:
-      "The photobioreactor facility provides controlled cultivation conditions for microalgae through regulation of light, temperature, aeration, and carbon dioxide supply. It supports research in algal biomanufacturing, biological carbon capture, phycoremediation, and sustainable bioproduct development.",
-  },
-  {
-    id: "western",
-    name: "Western Blot System",
-    image: "/instrum/westernBlot.jpg",
-    description:
-      "The Western blot facility enables the detection and characterization of specific proteins within complex biological samples. It supports protein expression analysis, collagen characterization, biomarker identification, and validation of biomolecules derived from biomaterial research.",
-  },
-  {
-    id: "chromatography",
-    name: "Ion Exchange Chromatography (Gravity Column Setup)",
-    image: "/instrum/chromatography.jpg",
-    description:
-      "The ion exchange chromatography facility is used for the purification and fractionation of proteins, peptides, and other charged biomolecules. It supports downstream processing workflows for algal bioproducts, collagen purification, and biomaterial development.",
-  },
-  // {
-  //   id: "extraction",
-  //   name: "Chemical Extraction Bench",
-  //   image: "/instrum/extraction.jpg",
-  //   description: "A dedicated workspace equipped for complex chemical and biological extractions. It facilitates the safe handling of reagents and solvents required during advanced protein isolation and bioproduct recovery protocols."
-  // },
-  // {
-  //   id: "phmeter",
-  //   name: "Digital pH Meter",
-  //   image: "/instrum/phmeter.jpg",
-  //   description: "Provides highly accurate measurements of solution acidity and alkalinity. It is routinely used to prepare precision buffers, optimize culture media, and ensure strictly controlled physiological conditions for biomaterial synthesis."
-  // }
-];
+  // Load data from the JSON file
+  const facilities = facilitiesDataRaw as Facility[];
 
   return (
     <div className="w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#009966]/10 via-white/50 to-white min-h-screen overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 w-full">
         {/* --- PAGE HEADER --- */}
         <FadeIn direction="up">
-          <div className="pb-6 mb-16 max-w-3xl">
+          <div className="pb-6 mb-16 w-full">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">
               Facilities & Equipment
             </h1>
