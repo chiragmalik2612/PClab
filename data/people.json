@@ -14,7 +14,7 @@
     "name": "Neha",
     "email": "neha_g@bt.iitr.ac.in",
     "role": "PhD",
-    "bio": "My work spans harvesting diverse microalgae and cyanobacteria, their cultivation in custom-designed photobioreactors, scaling up cyanobacteria production, and developing sequential downstream processes.",
+    "bio": "Microalgae cultivation and harvesting; Cyanobacteria scale-up in photobioreactor;  Extraction, purification, characterization, bioactivity  analysis and techno-economic assessment of cyanobacterial proteins for biomanufacturing ",
     "image": "/team/Neha.jpg",
     "linkedin": "https://www.linkedin.com/in/neha-goel-629119168/"
   },
@@ -41,7 +41,7 @@
     "name": "Rohinish Grover",
     "email": "rohinish_g@bt.iitr.ac.in",
     "role": "PhD",
-    "bio": "Research interest - Microalgal bioprocessing.",
+    "bio": "Research in Microalgal bioprocessing.",
     "image": "/team/rohinesh.jpg",
     "linkedin": "https://www.linkedin.com/in/rohinish-grover-418722242"
   },
@@ -51,7 +51,7 @@
     "email": "himanshu_k@bt.iitr.ac.in",
     "role": "PhD",
     "bio": "Engineering Microalgae for Enhanced Recombinant Protein Production.",
-    "image": "/team/himashu.jpg",
+    "image": "/team/himanshu.jpg",
     "linkedin": "https://www.linkedin.com/in/himanshu-kumar-4ba8622b2"
   },
   {
@@ -122,26 +122,29 @@
     "name": "Chirag Malik",
     "email": "chirag.malik.bme23@itbhu.ac.in",
     "role": "Intern",
+    "college": "IIT BHU Varanasi (IDD BME)",
     "bio": "Learning & Exploring the intersection of animal derived protein science and regenerative medicine through protein purification and hydrogel-based tissue engineering techniques.",
     "image": "/team/chirag.jpg",
     "linkedin": "https://www.linkedin.com/in/chirag-malik-63ba44282/"
   },
   {
     "id": "14",
-    "name": "Priyanshi",
-    "email": "629priyanshisharma@gmail.com",
-    "role": "Intern",
-    "bio": "Microalgal Biomass Processing and Protein Isolation. (B.Tech Biotechnology, Bennett University).",
-    "image": "/team/priyanshi.jpg",
-    "linkedin": null
-  },
-  {
-    "id": "15",
     "name": "Ruchira Biswas",
     "email": "mt2502171037@iiti.ac.in",
     "role": "Intern",
-    "bio": "Extraction and Characterization of Animal-Derived Proteins; Characterization of Hydrogels for Tissue Regenerative Therapies. (M.Tech BME, IIT Indore).",
+    "college": "IIT Indore (M.Tech BME)",
+    "bio": "Extraction and Characterization of Animal-Derived Proteins; Characterization of Hydrogels for Tissue Regenerative Therapies.",
     "image": "/team/ruchira.jpg",
+    "linkedin": null
+  },
+    {
+    "id": "15",
+    "name": "Priyanshi",
+    "email": "629priyanshisharma@gmail.com",
+    "role": "Intern",
+    "college": "Bennett University (B.Tech Biotech)",
+    "bio": "Microalgal Biomass Processing and Protein Isolation..",
+    "image": "/team/priyanshi.jpg",
     "linkedin": null
   },
   {
@@ -149,7 +152,8 @@
     "name": "JIGYASHA",
     "email": "jigyasha2027@gmail.com",
     "role": "Intern",
-    "bio": "Protein extraction and purification. (M.Sc. in Biotechnology, Banasthali Vidyapith).",
+    "college": "Banasthali Vidyapith (M.Sc Biotechnology)",
+    "bio": "Protein extraction and purification",
     "image": "/team/jigyasa.jpg",
     "linkedin": null
   },
@@ -158,6 +162,7 @@
     "name": "Mohammad Kaif",
     "email": "mohammadkaif80779@gmail.com",
     "role": "Intern",
+    "college": "xyzuniversity",
     "bio": "Assisting with laboratory bioprocessing research and downstream operations.",
     "image": "/team/kaif.jpg",
     "linkedin": null
@@ -168,7 +173,7 @@
     "email": "anithaaugustine768@gmail.com",
     "role": "Alumni",
     "bio": "Involved in the extraction, purification, and characterization of collagen 1 from biological sources, performed various analytical techniques, including protein quantification and solubility studies.",
-    "alumniRole": "M.Tech in Nanomedicine",
+    "alumniRole": "Intern",
     "alumniCollege": "Amrita School of Nanosciences and Molecular Medicine, Kochi",
     "image": "/team/Anitha.jpg",
     "linkedin": null
@@ -179,8 +184,8 @@
     "email": "medharoy0704@gmail.com",
     "role": "Alumni",
     "bio": "Evaluating mechanical cell lysis techniques for protein extraction from Spirulina Biomass.",
-    "alumniRole": "PhD Scholar",
-    "alumniCollege": "IBSD, Manipur",
+    "alumniRole": "MSc Trainee",
+    "alumniCollege": "IIT Roorkee",
     "image": "/team/Medha.jpg",
     "linkedin": "https://www.linkedin.com/in/medha-roy-94a18b248"
   },
@@ -190,8 +195,8 @@
     "email": "pushpendrapal9516@gmail.com",
     "role": "Alumni",
     "bio": "Focused on developing and optimizing an effective combination of methods for enhancing the protein recovery from the dried biomass of Spirulina Platensis.",
-    "alumniRole": "Research Associate",
-    "alumniCollege": null,
+    "alumniRole": "Btech Trainee",
+    "alumniCollege": "IIT Roorkee",
     "image": "/team/pushpendra.jpg",
     "linkedin": "https://www.linkedin.com/in/pushpendra-pal100/"
   },
@@ -201,8 +206,8 @@
     "email": "ariz_h@bt.iitr.ac.in",
     "role": "Alumni",
     "bio": "I work with biomaterials at interface of biology, material science and chemistry. Currently working on biomedical applications of collagen.",
-    "alumniRole": null,
-    "alumniCollege": null,
+    "alumniRole": "MSc Trainee",
+    "alumniCollege": "IIT Roorkee",
     "image": "/team/ariz.jpg",
     "linkedin": "https://www.linkedin.com/in/ariz-hussain-a42673176/"
   }

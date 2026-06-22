@@ -15,6 +15,8 @@ interface Person {
   googleScholar?: string | null;
   alumniRole?: string | null;
   alumniCollege?: string | null;
+  college?: string | null;
+  labRole?: string | null;
 }
 
 // --- Minimal Scroll Animation Wrapper ---
@@ -138,7 +140,7 @@ export default function PeoplePage() {
             return (
               <section key={category.key}>
                 <FadeIn direction="up">
-                  <h2 className="text-[#009966] font-bold tracking-widest uppercase text-xs mb-6">
+                  <h2 className="text-[#009966] font-bold tracking-widest uppercase text-xl mb-6">
                     {category.title}
                   </h2>
                 </FadeIn>
@@ -159,28 +161,32 @@ export default function PeoplePage() {
 
                         <div className="p-6 flex flex-col flex-1">
                           <div className="mb-4">
-                            <h3 className="text-lg font-bold tracking-tight text-slate-900 group-hover:text-[#009966] transition-colors leading-tight truncate">
+                            
+                            {/* --- NAME & ALUMNI ROLE (IN BRACKETS) --- */}
+                            <h3 className="text-lg font-bold tracking-tight text-slate-900 group-hover:text-[#009966] transition-colors leading-tight line-clamp-2">
                               {member.name}
+                              {member.role === "Alumni" && member.alumniRole && (
+                                <span className="text-[12px] font-semibold text-slate-500 ml-1.5 inline-block align-middle">
+                                  ({member.alumniRole})
+                                </span>
+                              )}
                             </h3>
+                            
+                            {/* --- EMAIL --- */}
                             <a href={`mailto:${member.email}`} className="text-[#009966] text-[13px] font-bold hover:underline block mt-1 truncate">
                               {member.email}
                             </a>
-                            
-                            {/* ALUMNI METADATA */}
-                            {member.role === "Alumni" && (member.alumniRole || member.alumniCollege) && (
-                              <div className="mt-3 flex flex-col gap-1 border-l-2 border-[#bd1e24] pl-2">
-                                {member.alumniRole && (
-                                  <span className="text-[11px] font-bold text-slate-700 uppercase tracking-wide leading-tight">
-                                    {member.alumniRole}
-                                  </span>
-                                )}
-                                {member.alumniCollege && (
-                                  <span className="text-[11px] text-slate-500 leading-tight">
-                                    {member.alumniCollege}
-                                  </span>
-                                )}
+
+                            {/* --- COLLEGE METADATA (For Interns and Alumni) --- */}
+                            {((member.role === "Intern" && member.college) || (member.role === "Alumni" && member.alumniCollege)) && (
+                              <div className="mt-2.5 flex items-start text-slate-500">
+                                <svg className="w-3.5 h-3.5 mr-1.5 mt-0.5 shrink-0" fill="none" stroke="red" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /></svg>
+                                <span className="text-[11px] font-bold text-slate-600 uppercase tracking-wide leading-snug line-clamp-2">
+                                  {member.role === "Intern" ? member.college : member.alumniCollege}
+                                </span>
                               </div>
                             )}
+
                           </div>
                           
                           {/* 5 lines of bio text */}
