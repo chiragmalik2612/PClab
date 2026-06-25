@@ -1,5 +1,5 @@
 [
- {
+  {
     "id": "pi-1",
     "name": "Dr. Poonam Choudhary",
     "title": "Assistant Professor",
@@ -23,7 +23,7 @@
     "googleScholar": "#",
     "linkedin": "#"
   },
-    {
+  {
     "id": "1",
     "name": "Neha",
     "email": "neha_g@bt.iitr.ac.in",
@@ -41,7 +41,7 @@
     "image": "/team/Madhu.jpg",
     "linkedin": "https://www.linkedin.com/in/madhu-yadav-sln/"
   },
-    {
+  {
     "id": "3",
     "name": "HRITICK GYAN VERMA",
     "email": "hritick_gv@bt.iitr.ac.in",
@@ -50,7 +50,7 @@
     "image": "/team/hritick.jpg",
     "linkedin": "https://www.linkedin.com/in/hritick-verma-1bb19b140"
   },
-    {
+  {
     "id": "4",
     "name": "Rohinish Grover",
     "email": "rohinish_g@bt.iitr.ac.in",
@@ -86,7 +86,7 @@
     "image": "/team/nikhil.jpg",
     "linkedin": null
   },
-    {
+  {
     "id": "8",
     "name": "SANDIPAN NAG",
     "email": "sandipan_n@bt.iitr.ac.in",
@@ -131,7 +131,7 @@
     "image": "/team/Alice.jpg",
     "linkedin": "https://www.linkedin.com/in/aluphony"
   },
-    {
+  {
     "id": "13",
     "name": "Chirag Malik",
     "email": "chirag.malik.bme23@itbhu.ac.in",
@@ -151,7 +151,7 @@
     "image": "/team/ruchira.jpg",
     "linkedin": null
   },
-    {
+  {
     "id": "15",
     "name": "Priyanshi",
     "email": "629priyanshisharma@gmail.com",
@@ -181,7 +181,7 @@
     "image": "/team/kaif.jpg",
     "linkedin": null
   },
-    {
+  {
     "id": "18",
     "name": "Anitha Augustine",
     "email": "anithaaugustine768@gmail.com",
