@@ -3,13 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 import peopleDataRaw from "@/data/people.json";
 
-// Local types adjusted for the new Alumni fields
+// Updated interface with ALL new PI fields
 interface Person {
   id: string;
   name: string;
   email: string;
   role: string;
   bio: string | null;
+  fullBio?: string[]; 
   image: string;
   linkedin: string | null;
   googleScholar?: string | null;
@@ -17,6 +18,13 @@ interface Person {
   alumniCollege?: string | null;
   college?: string | null;
   labRole?: string | null;
+  title?: string;
+  department?: string;
+  institution?: string;
+  phone?: string;
+  office?: string;
+  education?: string[];
+  experience?: string[];
 }
 
 // --- Minimal Scroll Animation Wrapper ---
@@ -63,7 +71,6 @@ export default function PeoplePage() {
   // Extract PI
   const piData = peopleData.find((person) => person.role === "PI");
 
-  // EXACT Categories mapped to your updated JSON roles
   const roleCategories = [
     { title: 'PhD Candidates', key: 'PhD' },
     { title: 'Project Staff', key: 'Project Staff' },
@@ -85,45 +92,124 @@ export default function PeoplePage() {
           </div>
         </FadeIn>
 
-        {/* --- 1. PRINCIPAL INVESTIGATOR SECTION --- */}
+        {/* --- 1. PRINCIPAL INVESTIGATOR SECTION (DETAILED VIEW) --- */}
         {piData && (
           <FadeIn direction="up" delay={100}>
             <div className="mb-24">
               <h2 className="text-[#009966] font-bold tracking-widest uppercase text-xs mb-5">
                 Principal Investigator
               </h2>
-              <div className="bg-white/60 backdrop-blur-sm flex flex-col md:flex-row group shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,153,102,0.12)] transition-shadow duration-500">
+              
+              <div className="bg-white/70 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,153,102,0.10)] transition-shadow duration-500 overflow-hidden flex flex-col lg:flex-row group">
                 
-                <div className="w-full md:w-1/3 lg:w-1/4 aspect-[3/4] md:aspect-auto shrink-0 bg-slate-100 overflow-hidden">
-                  <img 
-                    src={piData.image} 
-                    alt={piData.name} 
-                    className="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 transition-all duration-700 ease-in-out" 
-                  />
-                </div>
-
-                <div className="p-8 md:p-12 flex flex-col justify-center flex-1">
-                  <div className="mb-6">
-                    <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-2">
-                      {piData.name}
-                    </h3>
-                    <a href={`mailto:${piData.email}`} className="text-[#009966] text-sm font-bold hover:underline transition-colors block truncate">
-                      {piData.email}
-                    </a>
+                {/* Left Sidebar: Image & Contact */}
+                <div className="w-full lg:w-[320px] bg-slate-50/50 flex flex-col shrink-0 border-r border-slate-200/50">
+                  <div className="aspect-[3/4] w-full relative overflow-hidden bg-slate-200">
+                    <img 
+                      src={piData.image} 
+                      alt={piData.name} 
+                      className="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 transition-all duration-700 ease-in-out" 
+                    />
                   </div>
                   
-                  <p className="text-slate-700 text-base md:text-lg leading-relaxed mb-8">
-                    {piData.bio}
-                  </p>
-
-                  <div className="flex space-x-6 pt-6 mt-auto border-t border-slate-200/60 text-xs font-bold uppercase tracking-widest">
-                    {piData.googleScholar && (
-                      <a href={piData.googleScholar} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-[#bd1e24] transition-colors">Scholar</a>
+                  {/* Contact Block */}
+                  <div className="p-8 space-y-5">
+                    {piData.email && (
+                      <div>
+                        <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Email</div>
+                        <a href={`mailto:${piData.email}`} className="text-[#009966] text-sm font-semibold hover:underline block break-all">
+                          {piData.email}
+                        </a>
+                      </div>
                     )}
-                    {piData.linkedin && (
-                      <a href={piData.linkedin} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-[#bd1e24] transition-colors">LinkedIn</a>
+                    {piData.phone && (
+                      <div>
+                        <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Phone</div>
+                        <div className="text-slate-700 text-sm font-medium">{piData.phone}</div>
+                      </div>
+                    )}
+                    {piData.office && (
+                      <div>
+                        <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Office</div>
+                        <div className="text-slate-700 text-sm font-medium leading-snug">{piData.office}</div>
+                      </div>
+                    )}
+                    
+                    <div className="pt-4 border-t border-slate-200 flex gap-4">
+                      {piData.googleScholar && (
+                        <a href={piData.googleScholar} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-[#bd1e24] text-[11px] font-bold uppercase tracking-widest transition-colors">Scholar</a>
+                      )}
+                      {piData.linkedin && (
+                        <a href={piData.linkedin} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-[#bd1e24] text-[11px] font-bold uppercase tracking-widest transition-colors">LinkedIn</a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Content: Header, Edu/Exp, Bio */}
+                <div className="p-8 md:p-12 lg:p-14 flex-1 flex flex-col">
+                  
+                  {/* 1. Header (Name, Title, Dept) */}
+                  <div className="mb-10">
+                    <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-3">
+                      {piData.name}
+                    </h3>
+                    <div className="text-[#009966] font-bold uppercase tracking-widest text-sm mb-1">
+                      {piData.title}
+                    </div>
+                    <div className="text-slate-500 text-sm font-medium">
+                      {piData.department}, {piData.institution}
+                    </div>
+                  </div>
+                  
+                  {/* 2. Education & Experience Grid (MOVED UP) */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10 pb-10 border-b border-slate-200/80">
+                    
+                    {/* Education */}
+                    {piData.education && (
+                      <div>
+                        <h4 className="text-slate-900 font-bold mb-4 uppercase tracking-widest text-xs flex items-center">
+                          <span className="w-2 h-2 bg-[#bd1e24] mr-3"></span> Education
+                        </h4>
+                        <ul className="space-y-4">
+                          {piData.education.map((edu, idx) => (
+                            <li key={idx} className="text-sm text-slate-600 leading-relaxed font-medium">
+                              {edu}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Experience */}
+                    {piData.experience && (
+                      <div>
+                        <h4 className="text-slate-900 font-bold mb-4 uppercase tracking-widest text-xs flex items-center">
+                          <span className="w-2 h-2 bg-[#bd1e24] mr-3"></span> Professional Experience
+                        </h4>
+                        <ul className="space-y-4">
+                          {piData.experience.map((exp, idx) => (
+                            <li key={idx} className="text-sm text-slate-600 leading-relaxed font-medium">
+                              {exp}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    
+                  </div>
+
+                  {/* 3. Full Detailed Bio (MOVED DOWN) */}
+                  <div className="space-y-5 text-slate-700 text-base md:text-lg leading-relaxed">
+                    {piData.fullBio ? (
+                      piData.fullBio.map((paragraph, idx) => (
+                        <p key={idx}>{paragraph}</p>
+                      ))
+                    ) : (
+                      <p>{piData.bio}</p> // Fallback just in case
                     )}
                   </div>
+
                 </div>
               </div>
             </div>
@@ -145,7 +231,6 @@ export default function PeoplePage() {
                   </h2>
                 </FadeIn>
                 
-                {/* FORCED 4 COLUMNS: lg, xl, and 2xl all set to grid-cols-4 just to be safe */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-6 lg:gap-8">
                   {membersInRole.map((member, memIndex) => (
                     <FadeIn key={member.id} direction="up" delay={(memIndex % 4) * 100}>
@@ -162,7 +247,6 @@ export default function PeoplePage() {
                         <div className="p-6 flex flex-col flex-1">
                           <div className="mb-4">
                             
-                            {/* --- NAME & ALUMNI ROLE (IN BRACKETS) --- */}
                             <h3 className="text-lg font-bold tracking-tight text-slate-900 group-hover:text-[#009966] transition-colors leading-tight line-clamp-2">
                               {member.name}
                               {member.role === "Alumni" && member.alumniRole && (
@@ -172,15 +256,13 @@ export default function PeoplePage() {
                               )}
                             </h3>
                             
-                            {/* --- EMAIL --- */}
                             <a href={`mailto:${member.email}`} className="text-[#009966] text-[13px] font-bold hover:underline block mt-1 truncate">
                               {member.email}
                             </a>
 
-                            {/* --- COLLEGE METADATA (For Interns and Alumni) --- */}
                             {((member.role === "Intern" && member.college) || (member.role === "Alumni" && member.alumniCollege)) && (
                               <div className="mt-2.5 flex items-start text-slate-500">
-                                <svg className="w-3.5 h-3.5 mr-1.5 mt-0.5 shrink-0" fill="none" stroke="red" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /></svg>
+                                <svg className="w-3.5 h-3.5 mr-1.5 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /></svg>
                                 <span className="text-[11px] font-bold text-slate-600 uppercase tracking-wide leading-snug line-clamp-2">
                                   {member.role === "Intern" ? member.college : member.alumniCollege}
                                 </span>
@@ -189,7 +271,6 @@ export default function PeoplePage() {
 
                           </div>
                           
-                          {/* 5 lines of bio text */}
                           <p className="text-slate-600 text-sm leading-relaxed line-clamp-5 mb-6 flex-1">
                             {member.bio}
                           </p>

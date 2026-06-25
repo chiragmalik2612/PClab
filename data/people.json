@@ -1,11 +1,25 @@
 [
-  {
+ {
     "id": "pi-1",
     "name": "Dr. Poonam Choudhary",
-    "email": "poonam@university.edu",
+    "title": "Assistant Professor",
+    "department": "Department of Biosciences and Bioengineering",
+    "institution": "Indian Institute of Technology (IIT) Roorkee",
+    "email": "poonamchoudhary@bt.iitr.ac.in",
+    "phone": "+91-1332-285523",
+    "office": "F1B, Block A, Old Biotech Building, IIT Roorkee",
     "role": "PI",
-    "bio": "Principal Investigator leading the Biomanufacturing Process Lab. Focuses on transforming biological resources into high-value products.",
-    "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "shortBio": "Dr. Poonam Choudhary leads the Biomanufacturing Process Lab at IIT Roorkee. Her research integrates upstream cultivation, bioprocess engineering, and downstream recovery to develop end-to-end manufacturing platforms across biomaterials, algal biotechnology, and water-resource systems.",
+    "bio": "Dr. Poonam Choudhary leads the Biomanufacturing Process Lab at the Indian Institute of Technology Roorkee. Her research is centered on engineering biological resources into scalable products through integrated biomanufacturing. Over the past decade, she has contributed to the development of microalgal bioprocesses for carbon utilization, wastewater valorization, biomass production, and recovery of high-value biomolecules. Building on this foundation, her current research expands these engineering principles to develop manufacturing platforms for sustainable biomaterials, bioactive proteins and circular resource technologies.\n\nResearch in the Biomanufacturing Process Lab is organized around the complete biomanufacturing pipeline from biological feedstocks to finished products. The laboratory integrates upstream cultivation, bioprocess engineering, downstream recovery, product engineering, and process scale-up to develop end-to-end manufacturing platforms across biomaterials, algal biotechnology, and water-resource systems. The overarching goal is to engineer processes that are efficient, scalable, and readily adaptable for industrial implementation.\n\nThe laboratory actively collaborates with academic institutions, industry, clinicians, and research laboratories to accelerate technology development and product realization. By combining engineering innovation with application-driven research, Dr. Choudhary aims to establish indigenous biomanufacturing platforms that strengthen India's capabilities in sustainable manufacturing, healthcare technologies, and environmental resource management.",
+    "education": [
+      "Ph.D. (Algal biorefinery), Indian Institute of Technology Delhi (2017)",
+      "M.Tech (Biotechnology), National Institute of Technology Durgapur (2012)"
+    ],
+    "experience": [
+      "Research Scientist, Reliance Industries Limited (RIL)",
+      "Scientist-C, BRIC–National Agri-Food Biotechnology Institute (NABI), Mohali"
+    ],
+    "image": "/team/PI.jpg",
     "googleScholar": "#",
     "linkedin": "#"
   },
@@ -86,7 +100,7 @@
     "name": "Shruti Pragyan Tripathy",
     "email": "shrutipragyan02@gmail.com",
     "role": "MTech",
-    "bio": "Formulation of gelatin based hydrogel with genipin as a crosslinker and xylitol as a plasticizer, further making the hydrogel biofunctional.",
+    "bio": "Formulation & Characterization of Gelatin-Genipin-Xylitol based Hydrogel Augmented with Green-Synthesized Gold Nanoparticles from _Chlorella pyrenoidosa_ using Biomanufacturing Approach.",
     "image": "/team/shrutipr.jpg",
     "linkedin": "https://www.linkedin.com/in/shruti-pragyan-tripathy-b5b21a220"
   },

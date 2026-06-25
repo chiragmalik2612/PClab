@@ -1,32 +1,55 @@
 {
   "labName": "Advanced Biomaterials Lab",
-  "tagline": "Laboratory for Tissue Engineering and Medical Research",
-  "missionStatement": "Our facility focuses on the translation of tissue-engineered scaffolds, medical-grade extracellular matrices, and modern hardware-software interfaces.",
-  "heroImage": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+  "tagline": "Where Biology Becomes Manufacturing",
+  "missionStatement": "Engineering biological resources into high-value products through integrated bioprocesses, product development, and process scale-up.",
   "expertise": [
     {
-      "category": "Biomaterials",
-      "title": "Collagen Scaffolding",
-      "description": "Downstream processing of Type I Medical-Grade Collagen for structural tissue replacement and regeneration.",
-      "image": "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      "title": "Biomaterials & Regenerative Engineering",
+      "keywords": ["Sustainable biomaterials", "Collagen engineering", "Hydrogels", "Biofabrication", "Tissue regeneration"],
+      "description": "We engineer next-generation biomaterials by transforming biological resources into high-performance products for healthcare and regenerative applications. Our research integrates biomaterial extraction, molecular characterization, material processing, and product development to create functional collagen-based materials, injectable hydrogels, bioinks, wound care systems, and tissue engineering scaffolds. With an emphasis on scalable manufacturing and clinical translation, we develop biomaterials that combine biological functionality with engineering performance, bridging the gap between laboratory innovation and real-world biomedical products.",
+      "svg": "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z",
+      "images": [
+        "/research/bio1.jpg",
+        "/research/bio2.jpg",
+        "/research/bio3.jpg",
+        "/research/bio4.jpg"
+      ]
     },
     {
-      "category": "Neuro-Tech",
-      "title": "EEG Signal Processing",
-      "description": "Real-time cognitive load quantification and hardware-software interface deployment for active trials.",
-      "image": "https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      "title": "Bioprocess Scale-up & Product Recovery",
+      "keywords": ["Downstream engineering", "Bioseparations", "Protein purification", "Process scale-up", "Manufacturing", "Process intensification"],
+      "description": "Efficient recovery and manufacturing are essential for translating biological discoveries into commercially viable products. Our research focuses on designing robust downstream processing strategies for the extraction, purification, concentration, and stabilization of high-value biomolecules. We develop scalable bioprocesses that integrate recovery technologies, process optimization, pilot-scale validation, and manufacturing principles to improve product quality, yield, and cost-effectiveness. From laboratory-scale proof-of-concept to industrial production, we engineer processes that enable sustainable and economically feasible biomanufacturing.",
+      "svg": "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z",
+      "images": [
+        "/research/process1.jpg",
+        "/research/process2.jpg",
+        "/research/process3.jpg",
+        "/research/process4.jpg"
+      ]
     },
     {
-      "category": "Polymers",
-      "title": "Biocompatible Mechanics",
-      "description": "Synthesizing marine algae derivatives and advanced hydrogels for soft robotics applications.",
-      "image": "https://images.unsplash.com/photo-1614935151651-0bea6508ab6b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      "title": "Algal Biomanufacturing & Decarbonisation",
+      "keywords": ["Photobioreactors", "Carbon capture", "Bioactive proteins", "Algal biorefineries", "Air purification", "Sustainable bioproducts"],
+      "description": "We harness the remarkable potential of microalgae as sustainable biological factories for producing high-value products while addressing environmental challenges. Our research spans photobioreactor design, algal cultivation, carbon capture and utilization, downstream recovery of proteins and bioactive compounds, and integrated biorefinery development. By combining biological engineering with process innovation, we develop scalable algal technologies for carbon-neutral/negative manufacturing, functional ingredients, environmental remediation, and climate-resilient industrial applications.",
+      "svg": "M13 10V3L4 14h7v7l9-11h-7z",
+      "images": [
+        "/research/algae1.jpg",
+        "/research/algae2.jpg",
+        "/research/algae3.jpg",
+        "/research/algae4.jpg"
+      ]
     },
     {
-      "category": "Computing",
-      "title": "Affective Computing",
-      "description": "Bridging human-computer interactions through simulating and quantifying biological intelligence.",
-      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      "title": "Environmental biotechnology",
+      "keywords": ["Wastewater treatment", "Water quality monitoring", "Resource recovery", "Water reuse", "Circular economy", "Food-Water-Energy Nexus"],
+      "description": "Our research develops engineering solutions that transform water from a waste stream into a valuable resource. We design integrated systems for water and wastewater treatment, real-time monitoring, contaminant removal, resource recovery, and water reuse within circular economy frameworks. By combining biological treatment technologies with environmental sensing, process engineering, and data-driven management, we create sustainable solutions that improve water security while recovering nutrients, energy, and valuable products. Our work supports resilient water infrastructure and sustainable industrial practices across the Food-Water-Energy Nexus.",
+      "svg": "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4",
+      "images": [
+        "/research/water1.jpg",
+        "/research/water2.jpg",
+        "/research/water3.jpg",
+        "/research/water4.jpg"
+      ]
     }
   ]
 }
