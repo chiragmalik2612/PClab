@@ -7,7 +7,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Research Laboratory | Home',
+  title: 'BioPro',
   description: 'Academic and translational research exploration platform.',
 };
 

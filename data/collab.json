@@ -1,0 +1,50 @@
+[
+  { 
+    "id": 1, 
+    "name": "IIT Delhi", 
+    "logo": "/collab/IITDLOGO.jpg", 
+    "url": "https://home.iitd.ac.in/" 
+  },
+  { 
+    "id": 2, 
+    "name": "INMAS", 
+    "logo": "/collab/inmas-logo.jpg", 
+    "url": "https://drdo.gov.in/labs-and-establishments/institute-nuclear-medicine-allied-sciences-inmas" 
+  },
+  { 
+    "id": 3, 
+    "name": "Kore A M M R", 
+    "logo": "/collab/AMMR logo.jpg", 
+    "url": "#" 
+  },
+  { 
+    "id": 4, 
+    "name": "CIAB, Mohali", 
+    "logo": "/collab/CIAB_Logo.jpg", 
+    "url": "https://www.ciab.res.in/" 
+  },
+  { 
+    "id": 5, 
+    "name": "BRIC, NABI", 
+    "logo": "/collab/brick nabi logo.jpg", 
+    "url": "https://nabi.res.in/" 
+  },
+  { 
+    "id": 6, 
+    "name": "Reliance Industries Ltd.", 
+    "logo": "/collab/reliance logo.jpg", 
+    "url": "https://www.ril.com/" 
+  },
+  { 
+    "id": 7, 
+    "name": "EDNA - BioLabs", 
+    "logo": "/collab/edna biolabs logo.jpg", 
+    "url": "#" 
+  },
+  { 
+    "id": 8, 
+    "name": "Environ Algae", 
+    "logo": "/collab/enviro.jpg", 
+    "url": "#" 
+  }
+]
