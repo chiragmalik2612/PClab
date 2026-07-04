@@ -63,10 +63,10 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Embedded Google Map (IIT BHU Varanasi) */}
+        {/* Embedded Google Map (IIT Roorkee) */}
         <div className="w-full h-[400px] border border-slate-200 rounded-sm overflow-hidden shadow-sm bg-slate-100 p-1">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.326266472251!2d82.98638137599026!3d25.260533629166162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e33f3801f4c75%3A0xe5f86b4e7233857d!2sIndian%20Institute%20of%20Technology%20(BHU)%20Varanasi!5e0!3m2!1sen!2sin!4v1717800000000!5m2!1sen!2sin" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13840.281472749339!2d77.87251778715817!3d29.86224440000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390eb3708add70cd%3A0x2962c1ad99625236!2sDepartment%20of%20Biosciences%20and%20Bioengineering%2C%20IIT%20Roorkee!5e0!3m2!1sen!2sin!4v1783161014124!5m2!1sen!2sin" 
             width="100%" 
             height="100%" 
             style={{ border: 0, borderRadius: '2px' }} 
@@ -81,3 +81,4 @@ export default function ContactPage() {
     </div>
   );
 }
+

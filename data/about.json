@@ -11,9 +11,22 @@
       "images": [
         "/research/bio1.jpg",
         "/research/bio2.jpg",
-        "/research/bio3.jpg",
+        "/research/biohp.jpg",
         "/research/bio4.jpg"
-      ]
+      ],
+      "projectsSection": {
+        "funded": [
+          {
+            "title": "Development of Sustainable and Indigenous Porcine Collagen Extraction Technology for Corneal and Bone Regeneration in Battlefield Injuries",
+            "agency": "DIA-COE, DRDO",
+            "collaborator": "DRDO INMAS, New Delhi"
+          }
+        ],
+        "active": [
+          "Development and Characterization of Hydrogel Bioinks for 3D Printing of Cell-laden Wound Patches – in collaboration with Kore Additive Manufacturing and Medical Reconstruction Pvt. Ltd.",
+          "Formulation & Characterization of Gelatin-Genipin-Xylitol based Hydrogel Augmented with Green-Synthesized Gold Nanoparticles from microalgae using Biomanufacturing Approach."
+        ]
+      }
     },
     {
       "title": "Bioprocess Scale-up & Product Recovery",
@@ -25,7 +38,19 @@
         "/research/process2.jpg",
         "/research/process3.jpg",
         "/research/process4.jpg"
-      ]
+      ],
+      "projectsSection": {
+        "funded": [
+          {
+            "collaborator": "CIAB-Mohali, BRIC-NABI, EDNA Biolabs"
+          }
+        ],
+        "active": [
+          "Evaluating mechanical cell lysis techniques for protein extraction from Spirulina Biomass.",
+          "Developing and optimizing an effective combination of methods for enhancing the protein recovery from the dried biomass of Spirulina Platensis",
+          "Developing downstream process for the protein recovery from Spirulina biomass focused on developing and optimizing an effective combination of methods for enhancing the protein recovery from the dried biomass of Spirulina Platensis"
+        ]
+      }
     },
     {
       "title": "Algal Biomanufacturing & Decarbonisation",
@@ -35,9 +60,20 @@
       "images": [
         "/research/algae1.jpg",
         "/research/algae2.jpg",
-        "/research/algae3.jpg",
+        "/research/algae3r.jpg",
         "/research/algae4.jpg"
-      ]
+      ],
+      "projectsSection": {
+        "funded": [
+          {
+            "collaborator": "Reliance Industries Ltd, Environ Algae"
+          }
+        ],
+        "active": [
+          "Designing of algal photobioreactor for direct Air carbon capture and indoor air purification unit",
+          "Engineering Assessment of Spirulina platensis Growth Strategies for Biomass Optimization"
+        ]
+      }
     },
     {
       "title": "Water Circularity & Environmental Engineering",
@@ -49,7 +85,18 @@
         "/research/water2.jpg",
         "/research/water3.jpg",
         "/research/water4.jpg"
-      ]
+      ],
+      "projectsSection": {
+        "funded": [
+           {
+            "title": "Water Quality Assessment of Microbiological and Heavy metal Contamination",
+            "agency": "Roorkee Health Intelligence Pilot (RHIP), Ullas Charitable Trust",
+            "collaborator": ""
+          }
+        ],
+        "active": [
+        ]
+      }
     }
   ]
 }

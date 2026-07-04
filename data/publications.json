@@ -7,7 +7,7 @@
     "year": 2026,
     "doi": "10.1002/jbm.a.37000",
     "pdfUrl": "#",
-    "tags": ["Collagen", "Biomaterials", "Tissue Engineering"]
+    "tags": []
   },
   {
     "id": "pub-2",
@@ -17,6 +17,6 @@
     "year": 2025,
     "doi": "10.1109/TNSRE.2025.1234567",
     "pdfUrl": "#",
-    "tags": ["EEG", "Cognitive Assessment", "Next.js"]
+    "tags": []
   }
 ]

@@ -1,15 +1,15 @@
 [
-  { 
+    { 
     "id": 1, 
-    "name": "IIT Delhi", 
-    "logo": "/collab/IITDLOGO.jpg", 
-    "url": "https://home.iitd.ac.in/" 
-  },
-  { 
-    "id": 2, 
     "name": "INMAS", 
     "logo": "/collab/inmas-logo.jpg", 
     "url": "https://drdo.gov.in/labs-and-establishments/institute-nuclear-medicine-allied-sciences-inmas" 
+  },
+  { 
+    "id": 2, 
+    "name": "IIT Delhi", 
+    "logo": "/collab/IITDLOGO.jpg", 
+    "url": "https://home.iitd.ac.in/" 
   },
   { 
     "id": 3, 

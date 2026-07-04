@@ -21,7 +21,7 @@
     ],
     "image": "/team/PI.jpg",
     "googleScholar": "#",
-    "linkedin": "#"
+    "linkedin": "https://www.linkedin.com/in/linktopoonamchoudhary/"
   },
   {
     "id": "1",
@@ -55,7 +55,7 @@
     "name": "Rohinish Grover",
     "email": "rohinish_g@bt.iitr.ac.in",
     "role": "PhD",
-    "bio": "Research in Microalgal bioprocessing.",
+    "bio": "Microalgal bioprocessing.",
     "image": "/team/rohinesh.jpg",
     "linkedin": "https://www.linkedin.com/in/rohinish-grover-418722242"
   },
@@ -82,7 +82,7 @@
     "name": "Nikhil Narmeta",
     "email": "nikhil.bt@sric.iitr.ac.in",
     "role": "Project Staff",
-    "bio": "Project coordination and laboratory management operations.",
+    "bio": "Assisting in Collagen extraction and  Project  management operations.",
     "image": "/team/nikhil.jpg",
     "linkedin": null
   },
@@ -101,7 +101,7 @@
     "email": "shrutipragyan02@gmail.com",
     "role": "MTech",
     "bio": "Formulation & Characterization of Gelatin-Genipin-Xylitol based Hydrogel Augmented with Green-Synthesized Gold Nanoparticles from _Chlorella pyrenoidosa_ using Biomanufacturing Approach.",
-    "image": "/team/shrutipr.jpg",
+    "image": "/team/shruti.jpg",
     "linkedin": "https://www.linkedin.com/in/shruti-pragyan-tripathy-b5b21a220"
   },
   {
@@ -177,7 +177,7 @@
     "email": "mohammadkaif80779@gmail.com",
     "role": "Intern",
     "college": "xyzuniversity",
-    "bio": "Assisting with laboratory bioprocessing research and downstream operations.",
+    "bio": "Assisting with animal derived proteins research and downstream operations.",
     "image": "/team/kaif.jpg",
     "linkedin": null
   },
@@ -219,8 +219,8 @@
     "name": "ARIZ HUSSAIN",
     "email": "ariz_h@bt.iitr.ac.in",
     "role": "Alumni",
-    "bio": "I work with biomaterials at interface of biology, material science and chemistry. Currently working on biomedical applications of collagen.",
-    "alumniRole": "MSc Trainee",
+    "bio": "Developing downstream process for the protein recovery from Spirulina biomass focused on developing and optimizing an effective combination of methods for enhancing the protein recovery from the dried biomass of Spirulina Platensis",
+     "alumniRole": "MTech Trainee",
     "alumniCollege": "IIT Roorkee",
     "image": "/team/ariz.jpg",
     "linkedin": "https://www.linkedin.com/in/ariz-hussain-a42673176/"
