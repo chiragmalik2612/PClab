@@ -1,22 +1,52 @@
 [
   {
     "id": "pub-1",
-    "title": "Optimized Extraction and Mechanical Evaluation of Purified Type I Collagen Scaffolds for Soft Tissue Reconstruction",
-    "authors": ["Jenkins, S.", "Malik, C.", "Choudhary, P."],
-    "journal": "Journal of Biomedical Materials Research",
+    "title": "Addressing Challenges in Harvesting Algal Biomass for Pharmaceutical Applications",
+    "authors": ["Neha Goel", "H Naaz", "D Gola", "M Saxena", "Poonam Choudhary"],
+    "journal": "Algal Photobioreactors, Springer Nature (Pages: 309–361)",
     "year": 2026,
-    "doi": "10.1002/jbm.a.37000",
+    "doi": "10.1007/978-981-95-8431-4_12",
     "pdfUrl": "#",
-    "tags": []
+    "tags": ["Book Chapter"]
   },
   {
     "id": "pub-2",
-    "title": "A Full-Stack System Architecture for Real-Time Eriksen Flanker Task Analytics and Cognitive State Classification",
-    "authors": ["Rivera, A.", "Kumar, A.", "Jenkins, S."],
-    "journal": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
-    "year": 2025,
-    "doi": "10.1109/TNSRE.2025.1234567",
+    "title": "Process Engineering for Scalable Collagen Production: Upstream and Downstream Strategies for Tissue Regeneration",
+    "authors": ["Rohinish Grover", "Gyan Hritick Verma", "Pragyan Shruti Tripathy", "Arsath H", "Poonam Choudhary"],
+    "journal": "Industrial Microbiology and Biotechnology, Springer Nature",
+    "year": 2026,
+    "doi": "10.1007/978-981-95-5378-5_4",
     "pdfUrl": "#",
-    "tags": []
+    "tags": ["Book Chapter"]
+  },
+  {
+    "id": "pub-3",
+    "title": "A sequential downstream strategy for polychromatic proteins from Spirulina platensis: integrating thermo-mechano-chemical disruption with high-yield fractionation",
+    "authors": ["Neha Goel", "Poonam Choudhary"],
+    "journal": "Bioresource Technology Reports, Elsevier",
+    "year": 2026,
+    "doi": "10.1016/j.biteb.2026.102759",
+    "pdfUrl": "#",
+    "tags": ["Journal Article"]
+  },
+  {
+    "id": "pub-4",
+    "title": "Microalgae: A Sustainable Source for Next‐Generation Nutraceuticals",
+    "authors": ["Neha Goel", "Poonam Choudhary"],
+    "journal": "Microbial Nutraceuticals: Products and Processes, John Wiley & Sons, Ltd",
+    "year": 2025,
+    "doi": "10.1002/9781394241538.ch19",
+    "pdfUrl": "#",
+    "tags": ["Book Chapter"]
+  },
+  {
+    "id": "pub-5",
+    "title": "Exploring the Potential of Microbial Biomolecules in Advancing Human Health and Environmental Sustainability",
+    "authors": ["Neha Goel", "Poonam Choudhary", "Lopa Pattanaik", "Susant Kumar Padhi", "Pallavi Chaudhary"],
+    "journal": "Industrial Microbiology and Biotechnology: An Insight into Current Trends, Springer Nature Singapore",
+    "year": 2024,
+    "doi": "10.1007/978-981-97-1912-9_22",
+    "pdfUrl": "#",
+    "tags": ["Book Chapter"]
   }
 ]
