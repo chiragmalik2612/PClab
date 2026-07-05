@@ -4,6 +4,30 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import aboutData from "@/data/about.json"; 
 
+// --- TYPESCRIPT INTERFACES ---
+interface FundedProject {
+  title?: string;
+  agency?: string;
+  collaborator?: string;
+}
+
+interface ProjectsSection {
+  funded?: FundedProject[];
+  active?: string[];
+}
+
+interface ExpertiseArea {
+  title: string;
+  keywords: string[];
+  description: string;
+  svg: string;
+  images: string[];
+  projectsSection?: ProjectsSection;
+}
+
+// Cast the JSON data to our strict TypeScript interface
+const expertiseList = aboutData.expertise as ExpertiseArea[];
+
 // --- Minimal Scroll Animation Wrapper ---
 const FadeIn = ({
   children,
@@ -73,7 +97,7 @@ export default function ResearchAreasPage() {
 
         {/* --- RESEARCH AREAS SECTION --- */}
         <div className="space-y-32 md:space-y-40 mt-10">
-          {aboutData.expertise.map((area, index) => {
+          {expertiseList.map((area, index) => {
             const isEven = index % 2 === 0;
 
             // Check if there are any projects to render for this area
@@ -114,14 +138,6 @@ export default function ResearchAreasPage() {
                     <FadeIn direction="up" delay={200}>
                       <div className="md:px-4 lg:px-8">
                         
-                        {/* <div className="flex flex-wrap gap-2 mb-6">
-                          {area.keywords.map((kw, i) => (
-                            <span key={i} className="text-[#009966] font-bold tracking-widest uppercase text-[10px] bg-[#009966]/10 px-2.5 py-1">
-                              {kw}
-                            </span>
-                          ))}
-                        </div> */}
-
                         <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 mb-5">
                           {area.title}
                         </h2>
@@ -140,7 +156,7 @@ export default function ResearchAreasPage() {
                     <div className="w-full border-t border-slate-200/80 pt-10">
                       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
                         
-                        {/* Externally Funded Projects (Takes up 7 columns if there are active projects, or all 12 if not) */}
+                        {/* Externally Funded Projects */}
                         {hasFundedProjects && (
                           <div className={hasActiveProjects ? "lg:col-span-7" : "lg:col-span-12"}>
                             <h4 className="text-[#009966] font-bold tracking-widest uppercase text-[12px] mb-6 flex items-center">
@@ -151,7 +167,7 @@ export default function ResearchAreasPage() {
                               {area.projectsSection?.funded?.map((proj, pIdx) => (
                                 <div key={pIdx} className="bg-slate-50/80 border border-slate-100 p-6 shadow-[0_2px_10px_rgb(0,0,0,0.02)] hover:shadow-[0_4px_15px_rgb(0,153,102,0.08)] transition-all">
                                   <p className="text-slate-900 font-bold text-base mb-4 leading-snug">
-                                    {proj.title}
+                                    {proj.title || "Untitled Project"}
                                   </p>
                                   <div className="flex flex-col gap-2 text-[12px] text-slate-600">
                                     {proj.agency && (
@@ -173,12 +189,12 @@ export default function ResearchAreasPage() {
                           </div>
                         )}
 
-                        {/* Active Lab Projects (Takes up remaining space) */}
+                        {/* Active Lab Projects */}
                         {hasActiveProjects && (
                           <div className={hasFundedProjects ? "lg:col-span-5" : "lg:col-span-12"}>
                             <h4 className="text-slate-900 font-bold tracking-widest uppercase text-[12px] mb-6 flex items-center">
                               <span className="w-2 h-2 bg-[#bd1e24] mr-3"></span> 
-                            Lab Projects
+                              Lab Projects
                             </h4>
                             <ul className="space-y-4">
                               {area.projectsSection?.active?.map((proj, pIdx) => (
