@@ -62,6 +62,59 @@ const FadeIn = ({ children, delay = 0, direction = "up" }: { children: React.Rea
   );
 };
 
+// --- HERO SLIDESHOW GRID ---
+// This component seamlessly crossfades between two sets of 4 images
+const HeroSlideshow = () => {
+  const allImages = [
+    "/hero/hero1.jpeg", "/hero/hero2i.jpeg", "/hero/hero3i.jpeg", "/hero/hero4.jpeg",
+    "/hero/hero5.jpeg", "/hero/hero6.jpeg", "/hero/hero7.jpeg", "/hero/hero8.jpeg"
+  ];
+  
+  // Toggles between 0 (showing images 1-4) and 1 (showing images 5-8)
+  const [activeSet, setActiveSet] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSet((prev) => (prev === 0 ? 1 : 0));
+    }, 4000); // Crossfades every 4 seconds
+    return () => clearInterval(timer);
+  }, []);
+
+  // Helps keep the staggered layout you had in your original code
+  const getStaggerClass = (index: number) => {
+    if (index === 1) return "mt-0 lg:mt-8";
+    if (index === 2) return "lg:-mt-8";
+    return "";
+  };
+
+  return (
+    <div className="lg:col-span-5 grid grid-cols-2 gap-4">
+      {[0, 1, 2, 3].map((cellIndex) => (
+        <FadeIn key={cellIndex} direction="left" delay={200 + (cellIndex * 150)}>
+          <div className={`bg-white overflow-hidden aspect-square shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,153,102,0.15)] transition-shadow duration-500 group relative ${getStaggerClass(cellIndex)}`}>
+            
+            {/* Image from Set 1 (hero1 to hero4) */}
+            <img 
+              src={allImages[cellIndex]} 
+              alt={`Lab Event ${cellIndex + 1}`} 
+              className={`absolute inset-0 w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-in-out ${activeSet === 0 ? 'opacity-100' : 'opacity-0'}`} 
+            />
+            
+            {/* Image from Set 2 (hero5 to hero8) */}
+            <img 
+              src={allImages[cellIndex + 4]} 
+              alt={`Lab Event ${cellIndex + 5}`} 
+              className={`absolute inset-0 w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-in-out ${activeSet === 1 ? 'opacity-100' : 'opacity-0'}`} 
+            />
+
+          </div>
+        </FadeIn>
+      ))}
+    </div>
+  );
+};
+
+
 export default function HomePage() {
   return (
     <div className="w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#009966]/10 via-white to-white overflow-hidden">
@@ -98,28 +151,8 @@ export default function HomePage() {
               </FadeIn>
             </div>
 
-            <div className="lg:col-span-5 grid grid-cols-2 gap-4">
-              <FadeIn direction="left" delay={200}>
-                <div className="bg-white overflow-hidden aspect-square shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,153,102,0.15)] transition-shadow duration-500 group">
-                  <img src="/hero/hero1.jpg" alt="Lab Work" className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" />
-                </div>
-              </FadeIn>
-              <FadeIn direction="left" delay={350}>
-                <div className="bg-white overflow-hidden aspect-square shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,153,102,0.15)] transition-shadow duration-500 group mt-0 lg:mt-8">
-                  <img src="/hero/hero2.jpg" alt="Biomaterials" className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" />
-                </div>
-              </FadeIn>
-              <FadeIn direction="left" delay={500}>
-                <div className="bg-white overflow-hidden aspect-square shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,153,102,0.15)] transition-shadow duration-500 group lg:-mt-8">
-                  <img src="/hero/hero3.jpg" alt="Cognitive Tech" className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" />
-                </div>
-              </FadeIn>
-              <FadeIn direction="left" delay={650}>
-                <div className="bg-white overflow-hidden aspect-square shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,153,102,0.15)] transition-shadow duration-500 group">
-                  <img src="/hero/hero4.jpg" alt="Microscopy" className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" />
-                </div>
-              </FadeIn>
-            </div>
+            {/* Injected the animated 8-image crossfade grid here! */}
+            <HeroSlideshow />
 
           </div>
         </div>
@@ -192,10 +225,8 @@ export default function HomePage() {
                   <div className="p-6 md:p-8 flex flex-col justify-center flex-1">
                     <div className="mb-4 text-center md:text-left">
                       <h3 className="text-2xl font-bold text-slate-900 mb-1 tracking-tight">{piData.name}</h3>
-                      {/* Added PI Title mapping here */}
                       <p className="text-[#009966] text-sm font-bold uppercase tracking-widest">{piData.title}</p>
                     </div>
-                    {/* Short bio used here */}
                     <p className="text-slate-600 text-base leading-relaxed mb-6 line-clamp-3 md:line-clamp-4 text-center md:text-left">
                       {piData.bio}
                     </p>
