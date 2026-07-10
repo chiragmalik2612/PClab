@@ -126,15 +126,19 @@ export default function HomePage() {
             
             <div className="lg:col-span-7 flex flex-col justify-center">
               <FadeIn direction="up" delay={0}>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.15] mb-8 tracking-tight">
-                  {aboutData.tagline}
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.15] mb-6 tracking-tight">
+                  Welcome to the <br className="hidden md:block" />
+                  <span className="text-[#009966]">Biomanufacturing Process Lab</span>
                 </h1>
               </FadeIn>
               <FadeIn direction="up" delay={150}>
-                <div className="w-16 h-1.5 bg-[#009966] mb-8 shadow-sm"></div>
+                <div className="w-16 h-1.5 bg-[#009966] mb-6 shadow-sm"></div>
               </FadeIn>
               <FadeIn direction="up" delay={300}>
-                <p className="text-slate-600 text-lg md:text-xl leading-relaxed mb-10 pr-0 lg:pr-8">
+                <h2 className="text-xl md:text-2xl font-semibold text-slate-800 mb-4 pr-0 lg:pr-8">
+                  {aboutData.tagline}
+                </h2>
+                <p className="text-slate-600 text-lg leading-relaxed mb-10 pr-0 lg:pr-8">
                   {aboutData.missionStatement}
                 </p>
               </FadeIn>
@@ -169,7 +173,7 @@ export default function HomePage() {
                   Areas of Expertise
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
-                  Core Research Topics
+                  Core Research Areas
                 </h2>
               </div>
             </FadeIn>
