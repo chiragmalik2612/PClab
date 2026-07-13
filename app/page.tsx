@@ -62,54 +62,51 @@ const FadeIn = ({ children, delay = 0, direction = "up" }: { children: React.Rea
   );
 };
 
-// --- HERO SLIDESHOW GRID ---
-// This component seamlessly crossfades between two sets of 4 images
-const HeroSlideshow = () => {
+// --- CINEMATIC BACKGROUND SLIDESHOW ---
+// This component spans the entire hero background, slowly zooming and fading images
+const BackgroundSlideshow = () => {
   const allImages = [
-    "/hero/hero1.jpeg", "/hero/hero2i.jpeg", "/hero/hero3i.jpeg", "/hero/hero4.jpeg",
-    "/hero/hero5.jpeg", "/hero/hero6.jpeg", "/hero/hero7.jpeg", "/hero/hero8.jpeg"
+    "/hero/hero2i.jpeg", "/hero/hero3i.jpeg", "/hero/hero4.jpeg",
+    "/hero/hero5.jpeg", "/hero/hero6.jpeg", "/hero/hero7.jpeg", "/hero/hero9.jpeg"
   ];
   
-  // Toggles between 0 (showing images 1-4) and 1 (showing images 5-8)
-  const [activeSet, setActiveSet] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    // Cycles to the next image every 3.5 seconds
     const timer = setInterval(() => {
-      setActiveSet((prev) => (prev === 0 ? 1 : 0));
-    }, 4000); // Crossfades every 4 seconds
+      setCurrentIndex((prev) => (prev + 1) % allImages.length);
+    }, 3500); 
     return () => clearInterval(timer);
-  }, []);
-
-  // Helps keep the staggered layout you had in your original code
-  const getStaggerClass = (index: number) => {
-    if (index === 1) return "mt-0 lg:mt-8";
-    if (index === 2) return "lg:-mt-8";
-    return "";
-  };
+  }, [allImages.length]);
 
   return (
-    <div className="lg:col-span-5 grid grid-cols-2 gap-4">
-      {[0, 1, 2, 3].map((cellIndex) => (
-        <FadeIn key={cellIndex} direction="left" delay={200 + (cellIndex * 150)}>
-          <div className={`bg-white overflow-hidden aspect-square shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,153,102,0.15)] transition-shadow duration-500 group relative ${getStaggerClass(cellIndex)}`}>
-            
-            {/* Image from Set 1 (hero1 to hero4) */}
-            <img 
-              src={allImages[cellIndex]} 
-              alt={`Lab Event ${cellIndex + 1}`} 
-              className={`absolute inset-0 w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-in-out ${activeSet === 0 ? 'opacity-100' : 'opacity-0'}`} 
+    <div className="absolute inset-0 w-full h-full z-0 overflow-hidden bg-slate-900">
+      {allImages.map((src, index) => {
+        const isActive = index === currentIndex;
+        return (
+          <div
+            key={src}
+            className={`absolute inset-0 transition-opacity duration-[1500ms] ease-in-out ${
+              isActive ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <img
+              src={src}
+              alt={`Lab Background ${index + 1}`}
+              className={`w-full h-full object-cover transition-transform duration-[7000ms] ease-out ${
+                isActive ? "scale-105" : "scale-100"
+              }`}
             />
-            
-            {/* Image from Set 2 (hero5 to hero8) */}
-            <img 
-              src={allImages[cellIndex + 4]} 
-              alt={`Lab Event ${cellIndex + 5}`} 
-              className={`absolute inset-0 w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-in-out ${activeSet === 1 ? 'opacity-100' : 'opacity-0'}`} 
-            />
-
           </div>
-        </FadeIn>
-      ))}
+        );
+      })}
+      {/* 
+        GRADIENT OVERLAY (Maximum Visibility): 
+        Dropped mobile opacity to 40%.
+        Dropped desktop starting opacity to 70%, fading out to completely transparent very quickly.
+      */}
+      <div className="absolute inset-0 bg-white/40 lg:bg-gradient-to-r lg:from-white/70 lg:via-white/10 lg:to-transparent"></div>
     </div>
   );
 };
@@ -117,53 +114,65 @@ const HeroSlideshow = () => {
 
 export default function HomePage() {
   return (
-    <div className="w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#009966]/10 via-white to-white overflow-hidden">
+    <div className="w-full overflow-hidden">
       
-      {/* --- 1. HERO SECTION --- */}
-      <div className="w-full py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      {/* --- 1. NEW CINEMATIC HERO SECTION --- */}
+      <div className="relative w-full min-h-[85vh] flex items-center">
+        {/* The Animated Background */}
+        <BackgroundSlideshow />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <div className="lg:col-span-7 flex flex-col justify-center">
+            {/* Text Content spans 8 columns, leaving the right side open for the background images to shine through */}
+            <div className="lg:col-span-8 flex flex-col justify-center max-w-3xl">
+              
               <FadeIn direction="up" delay={0}>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.15] mb-6 tracking-tight">
-                  Welcome to the <br className="hidden md:block" />
-                  <span className="text-[#009966]">Biomanufacturing Process Lab</span>
+                {/* Added drop-shadow to text to ensure readability against the highly visible background */}
+                <span className="text-[#009966] font-bold tracking-widest uppercase text-sm md:text-base mb-3 block drop-shadow-md">
+                  Welcome to the
+                </span>
+                <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-6 tracking-tight drop-shadow-md">
+                  Biomanufacturing <br className="hidden md:block" />
+                  Process Lab
                 </h1>
               </FadeIn>
+
               <FadeIn direction="up" delay={150}>
-                <div className="w-16 h-1.5 bg-[#009966] mb-6 shadow-sm"></div>
-              </FadeIn>
-              <FadeIn direction="up" delay={300}>
-                <h2 className="text-xl md:text-2xl font-semibold text-slate-800 mb-4 pr-0 lg:pr-8">
-                  {aboutData.tagline}
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-[#009966] mb-6 drop-shadow-md bg-white/20 inline-block px-2 rounded backdrop-blur-sm lg:bg-transparent lg:backdrop-blur-none lg:px-0 lg:rounded-none">
+                  Where Biology Becomes Manufacturing
                 </h2>
-                <p className="text-slate-600 text-lg leading-relaxed mb-10 pr-0 lg:pr-8">
-                  {aboutData.missionStatement}
+              </FadeIn>
+
+              <FadeIn direction="up" delay={300}>
+                <div className="w-16 h-1.5 bg-slate-900 mb-6 shadow-md drop-shadow-md"></div>
+              </FadeIn>
+
+              <FadeIn direction="up" delay={450}>
+                <p className="text-slate-900 text-lg md:text-xl leading-relaxed mb-10 font-bold drop-shadow-md bg-white/20 inline-block px-3 py-2 rounded backdrop-blur-sm lg:bg-transparent lg:backdrop-blur-none lg:p-0 lg:rounded-none">
+                  We engineer biological resources into high-value products through integrated bioprocess engineering, product development, and scalable manufacturing technologies.
                 </p>
               </FadeIn>
-              <FadeIn direction="up" delay={450}>
+
+              <FadeIn direction="up" delay={600}>
                 <div>
                   <Link 
                     href="/research" 
-                    className="inline-flex items-center justify-center bg-[#bd1e24] hover:bg-[#9a181d] text-white px-8 py-4 text-base font-bold tracking-wide transition-all shadow-lg hover:shadow-xl"
+                    className="inline-flex items-center justify-center bg-[#bd1e24] hover:bg-[#9a181d] text-white px-8 py-4 text-base font-bold tracking-wide transition-all shadow-lg hover:shadow-xl hover:scale-105"
                   >
-                   Read More About Us
+                   Explore Our Research
                     <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                   </Link>
                 </div>
               </FadeIn>
             </div>
 
-            {/* Injected the animated 8-image crossfade grid here! */}
-            <HeroSlideshow />
-
           </div>
         </div>
       </div>
 
       {/* --- 2. LAB TOPICS & PI SECTION --- */}
-      <div className="w-full bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#009966]/10 via-white/0 to-transparent">
+      <div className="relative z-10 w-full bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#009966]/10 via-white/0 to-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24">
           
           <div className="mb-24">
