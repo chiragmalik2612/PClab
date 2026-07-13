@@ -46,5 +46,11 @@
     "name": "Environ Algae", 
     "logo": "/collab/enviro.jpg", 
     "url": "#" 
+  },
+   { 
+    "id": 9, 
+    "name": "Ashai India Glass Ltd.", 
+    "logo": "/collab/ashai.png", 
+    "url": "#" 
   }
 ]

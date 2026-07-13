@@ -1,5 +1,5 @@
 [
-    {
+  {
     "id": "1",
     "title": "Invited Lecture at APA BioForum Conference",
     "content": "PI Dr. Poonam Choudhary delivered an invited lecture at the APA BioForum Conference hosted at IIT Mandi on the topic \"Engineering Functional Biomaterials: From Waste-Derived Biopolymers to Hydrogel Platforms through Biomanufacturing Strategies.\" The presentation highlighted recent advances in sustainable biomaterial development, hydrogel engineering, and translational biomanufacturing approaches for regenerative medicine applications.",
@@ -8,7 +8,7 @@
     "imageUrl": "/updates/event1.jpg",
     "link": "#"
   },
-    {
+  {
     "id": "2",
     "title": "Oral Presentation at APA BIOFORUM, IIT Mandi",
     "content": "Hritick Gyan Verma delivered an oral presentation titled “Waste to Biomaterial: Targeted Recovery of Type I Collagen from Porcine Upper Dermis for Hydrogel Engineering” at the APA BIOFORUM held at IIT Mandi. The research, co-authored with Dr. Poonam Choudhary and Prof. Pravindra Kumar, highlights sustainable recovery methods for developing engineered hydrogels from biological waste.",
@@ -51,6 +51,15 @@
     "date": "December 11-14, 2025",
     "category": "Event",
     "imageUrl": "/updates/event6.jpg",
+    "link": "#"
+  },
+  {
+    "id": "7",
+    "title": "Third Prize for Hindi Article in 'प्रौद्योगिकीय मंथन'",
+    "content": "PhD scholar Madhu Yadav, along with Neha Goel and PI Dr. Poonam Choudhary (Department of Biosciences and Bioengineering, IIT Roorkee), were awarded the Third Prize for their publication in the Hindi magazine 'प्रौद्योगिकीय मंथन'. Their insightful article is titled \"पर्यावरण में हानिकारक शैवाल के शमन के लिए जैविक प्रणाली का अनुप्रयोग\" (Application of biological systems for mitigation of harmful algae in the environment).",
+    "date": "September 25, 2025",
+    "category": "Award",
+    "imageUrl": "/updates/event7.jpg",
     "link": "#"
   }
 ]

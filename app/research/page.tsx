@@ -172,7 +172,7 @@ export default function ResearchAreasPage() {
                                   <div className="flex flex-col gap-2 text-[12px] text-slate-600">
                                     {proj.agency && (
                                       <span className="flex items-start">
-                                        <span className="font-bold text-slate-400 uppercase tracking-widest w-20 shrink-0">Agency:</span> 
+                                        <span className="font-bold text-slate-400 uppercase tracking-widest w-20 shrink-0">Funding:</span> 
                                         <span className="font-medium">{proj.agency}</span>
                                       </span>
                                     )}

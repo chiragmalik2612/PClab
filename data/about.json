@@ -11,21 +11,19 @@
       "images": [
         "/research/bio1.jpg",
         "/research/bio2.jpg",
-        "/research/biohp.jpg",
-        "/research/bio4.jpg"
+        "/research/bio3h.jpg",
+        "/research/bio4h.jpg"
       ],
       "projectsSection": {
         "funded": [
           {
             "title": "Development of Sustainable and Indigenous Porcine Collagen Extraction Technology for Corneal and Bone Regeneration in Battlefield Injuries",
             "agency": "DIA-COE, DRDO",
-            "collaborator": "DRDO INMAS, New Delhi"
+            "collaborator": "DRDO INMAS, KORE, AIIMS Rishikesh, IITD, Himedia"
           }
         ],
         "active": [
-          "Development and Characterization of Hydrogel Bioinks for 3D Printing of Cell-laden Wound Patches – in collaboration with Kore Additive Manufacturing and Medical Reconstruction Pvt. Ltd.",
-          "Formulation & Characterization of Gelatin-Genipin-Xylitol based Hydrogel Augmented with Green-Synthesized Gold Nanoparticles from microalgae using Biomanufacturing Approach."
-        ]
+          "Development and Characterization of Hydrogel Bioinks for 3D Printing of Cell-laden Wound Patches – in collaboration with Kore Additive Manufacturing and Medical Reconstruction Pvt. Ltd." ]
       }
     },
     {
@@ -42,12 +40,11 @@
       "projectsSection": {
         "funded": [
           {
-            "collaborator": "CIAB-Mohali, BRIC-NABI, EDNA Biolabs"
+            "agency": "IITR (FIG)",
+            "collaborator": "BRIC-NABI, EDNA Biolabs"
           }
         ],
         "active": [
-          "Evaluating mechanical cell lysis techniques for protein extraction from Spirulina Biomass.",
-          "Developing and optimizing an effective combination of methods for enhancing the protein recovery from the dried biomass of Spirulina Platensis",
           "Developing downstream process for the protein recovery from Spirulina biomass focused on developing and optimizing an effective combination of methods for enhancing the protein recovery from the dried biomass of Spirulina Platensis"
         ]
       }
@@ -66,13 +63,11 @@
       "projectsSection": {
         "funded": [
           {
-            "collaborator": "Reliance Industries Ltd, Environ Algae"
+            "agency": "IITR",
+            "collaborator": "Reliance Industries Ltd, Environ Algae,IITD"
           }
         ],
-        "active": [
-          "Designing of algal photobioreactor for direct Air carbon capture and indoor air purification unit",
-          "Engineering Assessment of Spirulina platensis Growth Strategies for Biomass Optimization"
-        ]
+        "active": []
       }
     },
     {
@@ -84,13 +79,13 @@
         "/research/water1.jpg",
         "/research/water2.jpg",
         "/research/water3.jpg",
-        "/research/water4.jpg"
+        "/research/water4h.jpg"
       ],
       "projectsSection": {
         "funded": [
            {
-            "title": "Water Quality Assessment of Microbiological and Heavy metal Contamination",
-            "agency": "Roorkee Health Intelligence Pilot (RHIP), Ullas Charitable Trust",
+            "title": "RHIP",
+            "agency": "ASAHI glass",
             "collaborator": ""
           }
         ],
