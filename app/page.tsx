@@ -62,94 +62,87 @@ const FadeIn = ({ children, delay = 0, direction = "up" }: { children: React.Rea
   );
 };
 
-// --- CINEMATIC BACKGROUND SLIDESHOW ---
-// This component spans the entire hero background, slowly zooming and fading images
-const BackgroundSlideshow = () => {
+// --- HERO IMAGE GRID (CHESSBOARD STYLE) ---
+// A professional, rigid grid with clean cell borders, no gaps, and no rounding.
+const HeroImageGrid = () => {
+  // We use 8 slots so a 4-image grid can perfectly crossfade to a new set of 4. 
+  // (Reused hero2i.jpeg to round out the 7 provided images to 8)
   const allImages = [
-    "/hero/hero2i.jpeg", "/hero/hero3i.jpeg", "/hero/hero4.jpeg",
-    "/hero/hero5.jpeg", "/hero/hero6.jpeg", "/hero/hero7.jpeg", "/hero/hero9.jpeg"
+    "/hero/hero1h.jpeg", "/hero/hero3i.jpeg", "/hero/hero4.jpeg", "/hero/hero5.jpeg",
+    "/hero/hero6.jpeg", "/hero/hero7.jpeg", "/hero/hero8.jpeg", "/hero/hero9.jpeg" 
   ];
   
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [activeSet, setActiveSet] = useState(0);
 
   useEffect(() => {
-    // Cycles to the next image every 3.5 seconds
+    // Cycles the images every 4 seconds
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % allImages.length);
-    }, 3500); 
+      setActiveSet((prev) => (prev === 0 ? 1 : 0));
+    }, 4000); 
     return () => clearInterval(timer);
-  }, [allImages.length]);
+  }, []);
 
   return (
-    <div className="absolute inset-0 w-full h-full z-0 overflow-hidden bg-slate-900">
-      {allImages.map((src, index) => {
-        const isActive = index === currentIndex;
-        return (
-          <div
-            key={src}
-            className={`absolute inset-0 transition-opacity duration-[1500ms] ease-in-out ${
-              isActive ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <img
-              src={src}
-              alt={`Lab Background ${index + 1}`}
-              className={`w-full h-full object-cover transition-transform duration-[7000ms] ease-out ${
-                isActive ? "scale-105" : "scale-100"
-              }`}
+    // GRID CONTAINER: Added unified border and ensured perfect grid borders with divide utilities.
+    <div className="grid grid-cols-2 gap-0 border border-slate-200 divide-x divide-y divide-slate-200 overflow-hidden">
+      {[0, 1, 2, 3].map((cellIndex) => (
+          // CELL CONTAINER: Fixed 'up' direction for clean unified grid block entry.
+          <div key={cellIndex} className="bg-slate-50 relative aspect-square group">
+            
+            {/* Image Set 1 */}
+            <img 
+              src={allImages[cellIndex]} 
+              alt={`Lab Output ${cellIndex + 1}`} 
+              className={`absolute inset-0 w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 transition-all duration-1000 ease-in-out rounded-none ${activeSet === 0 ? 'opacity-100' : 'opacity-0'}`} 
             />
+            
+            {/* Image Set 2 */}
+            <img 
+              src={allImages[cellIndex + 4]} 
+              alt={`Lab Output ${cellIndex + 5}`} 
+              className={`absolute inset-0 w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 transition-all duration-1000 ease-in-out rounded-none ${activeSet === 1 ? 'opacity-100' : 'opacity-0'}`} 
+            />
+
           </div>
-        );
-      })}
-      {/* 
-        GRADIENT OVERLAY (Maximum Visibility): 
-        Dropped mobile opacity to 40%.
-        Dropped desktop starting opacity to 70%, fading out to completely transparent very quickly.
-      */}
-      <div className="absolute inset-0 bg-white/40 lg:bg-gradient-to-r lg:from-white/70 lg:via-white/10 lg:to-transparent"></div>
+      ))}
     </div>
   );
 };
 
-
 export default function HomePage() {
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#009966]/10 via-white to-white overflow-hidden">
       
-      {/* --- 1. NEW CINEMATIC HERO SECTION --- */}
-      <div className="relative w-full min-h-[85vh] flex items-center">
-        {/* The Animated Background */}
-        <BackgroundSlideshow />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      {/* --- 1. HERO SECTION --- */}
+      <div className="w-full py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
-            {/* Text Content spans 8 columns, leaving the right side open for the background images to shine through */}
-            <div className="lg:col-span-8 flex flex-col justify-center max-w-3xl">
+            {/* Left Side: Text Content */}
+            <div className="lg:col-span-7 flex flex-col justify-center max-w-3xl pr-0 lg:pr-12">
               
               <FadeIn direction="up" delay={0}>
-                {/* Added drop-shadow to text to ensure readability against the highly visible background */}
-                <span className="text-[#009966] font-bold tracking-widest uppercase text-sm md:text-base mb-3 block drop-shadow-md">
+                <span className="text-[#009966] font-bold tracking-widest uppercase text-sm md:text-base mb-3 block">
                   Welcome to the
                 </span>
-                <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-6 tracking-tight drop-shadow-md">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.15] mb-6 tracking-tight">
                   Biomanufacturing <br className="hidden md:block" />
                   Process Lab
                 </h1>
               </FadeIn>
 
               <FadeIn direction="up" delay={150}>
-                <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-[#009966] mb-6 drop-shadow-md bg-white/20 inline-block px-2 rounded backdrop-blur-sm lg:bg-transparent lg:backdrop-blur-none lg:px-0 lg:rounded-none">
+                <h2 className="text-xl md:text-2xl font-semibold text-[#009966] mb-6">
                   Where Biology Becomes Manufacturing
                 </h2>
               </FadeIn>
 
               <FadeIn direction="up" delay={300}>
-                <div className="w-16 h-1.5 bg-slate-900 mb-6 shadow-md drop-shadow-md"></div>
+                <div className="w-16 h-1.5 bg-slate-900 mb-6 shadow-sm"></div>
               </FadeIn>
 
               <FadeIn direction="up" delay={450}>
-                <p className="text-slate-900 text-lg md:text-xl leading-relaxed mb-10 font-bold drop-shadow-md bg-white/20 inline-block px-3 py-2 rounded backdrop-blur-sm lg:bg-transparent lg:backdrop-blur-none lg:p-0 lg:rounded-none">
+                <p className="text-slate-600 text-lg leading-relaxed mb-10 pr-0 lg:pr-8">
                   We engineer biological resources into high-value products through integrated bioprocess engineering, product development, and scalable manufacturing technologies.
                 </p>
               </FadeIn>
@@ -158,12 +151,19 @@ export default function HomePage() {
                 <div>
                   <Link 
                     href="/research" 
-                    className="inline-flex items-center justify-center bg-[#bd1e24] hover:bg-[#9a181d] text-white px-8 py-4 text-base font-bold tracking-wide transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                    className="inline-flex items-center justify-center bg-[#bd1e24] hover:bg-[#9a181d] text-white px-8 py-4 text-base font-bold tracking-wide transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 rounded-sm"
                   >
                    Explore Our Research
                     <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                   </Link>
                 </div>
+              </FadeIn>
+            </div>
+
+            {/* Right Side: Rigid 'Chessboard' Grid (Modified Entrance direction to 'up' for strict block grid) */}
+            <div className="lg:col-span-5 w-full max-w-lg lg:max-w-none mx-auto">
+              <FadeIn direction="up" delay={400}>
+                <HeroImageGrid />
               </FadeIn>
             </div>
 

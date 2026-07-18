@@ -19,7 +19,7 @@
           {
             "title": "Development of Sustainable and Indigenous Porcine Collagen Extraction Technology for Corneal and Bone Regeneration in Battlefield Injuries",
             "agency": "DIA-COE, DRDO",
-            "collaborator": "DRDO INMAS, KORE, AIIMS Rishikesh, IITD, Himedia"
+            "collaborator": "DRDO INMAS, KORE AMMR, AIIMS Rishikesh, IITD, Himedia"
           }
         ],
         "active": [
@@ -40,13 +40,13 @@
       "projectsSection": {
         "funded": [
           {
+            "title": "Downstream process development for microalgal metabolites as photo-antimicrobials",
             "agency": "IITR (FIG)",
             "collaborator": "BRIC-NABI, EDNA Biolabs"
           }
         ],
         "active": [
-          "Developing downstream process for the protein recovery from Spirulina biomass focused on developing and optimizing an effective combination of methods for enhancing the protein recovery from the dried biomass of Spirulina Platensis"
-        ]
+          " Developing downstream process for the protein recovery from Spirulina biomass"  ]
       }
     },
     {
@@ -63,6 +63,7 @@
       "projectsSection": {
         "funded": [
           {
+            "title": "Algal Biomanufacturing for  production of functional ingredients and climate-resilient industrial applications",
             "agency": "IITR",
             "collaborator": "Reliance Industries Ltd, Environ Algae,IITD"
           }
@@ -76,16 +77,16 @@
       "description": "Our research develops engineering solutions that transform water from a waste stream into a valuable resource. We design integrated systems for water and wastewater treatment, real-time monitoring, contaminant removal, resource recovery, and water reuse within circular economy frameworks. By combining biological treatment technologies with environmental sensing, process engineering, and data-driven management, we create sustainable solutions that improve water security while recovering nutrients, energy, and valuable products. Our work supports resilient water infrastructure and sustainable industrial practices across the Food-Water-Energy Nexus.",
       "svg": "M15 11.25c0-3.314-3-6.75-3-6.75S9 7.936 9 11.25c0 1.657 1.343 3 3 3s3-1.343 3-3z M12 2.25A11.83 11.83 0 004.5 10.5c0 4.142 3.358 7.5 7.5 7.5s7.5-3.358 7.5-7.5a11.83 11.83 0 00-7.5-8.25z",
       "images": [
-        "/research/water1.jpg",
-        "/research/water2.jpg",
-        "/research/water3.jpg",
+        "/research/water1w.jpg",
+        "/research/water2w.jpg",
+        "/research/water3w.jpg",
         "/research/water4h.jpg"
       ],
       "projectsSection": {
         "funded": [
            {
-            "title": "RHIP",
-            "agency": "ASAHI glass",
+            "title": "Water Quality Assessment of Microbiological and Heavy Metal Contamination under the Roorkee Health Intelligence Pilot (RHIP",
+            "agency": "Ashai India Glass Ltd.",
             "collaborator": ""
           }
         ],
