@@ -1,3 +1,6 @@
+"use client";
+
+import Image from 'next/image'; // Import Next.js Image component
 import { ContactInfo } from '@/types';
 import contactDataRaw from '@/data/contact.json';
 
@@ -11,7 +14,7 @@ export default function ContactPage() {
       <div className="text-center max-w-2xl mb-12">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">Contact Us</h1>
         <div className="w-16 h-1.5 bg-[#009966] mx-auto mb-6"></div>
-        <p className="text-slate-500 text-lg">
+        <p className="text-slate-500 text-lg leading-relaxed">
           We welcome inquiries regarding research collaborations, post-doctoral positions, and graduate studies.
         </p>
       </div>
@@ -21,7 +24,7 @@ export default function ContactPage() {
         
         {/* Centered Info Card */}
         <div className="bg-white border border-slate-200 p-8 md:p-12 shadow-sm rounded-sm text-center group hover:border-[#009966]/40 transition-colors">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">{contact.labName}</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2 leading-tight">{contact.labName}</h2>
           <p className="text-slate-500 text-lg mb-12">{contact.institution}</p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-8">
@@ -52,12 +55,27 @@ export default function ContactPage() {
               <p className="text-slate-700 font-medium">{contact.officeLocation}</p>
             </div>
 
-            {/* Mailing Info (Spans both columns) */}
-            <div className="md:col-span-2 flex flex-col items-center text-center pt-10 mt-2 border-t border-slate-100">
+            {/* Mailing Info (Restructured for Side-by-Side Placement) */}
+            <div className="flex flex-col items-center text-center pt-10 mt-2 border-t border-slate-100">
               <h3 className="text-xs font-bold uppercase tracking-widest text-[#009966] mb-3">Mailing Address</h3>
-              <p className="text-slate-700 font-medium max-w-md leading-relaxed">
+              <p className="text-slate-700 font-medium max-w-xs leading-relaxed">
                 {contact.address}
               </p>
+            </div>
+
+            {/* NEW QR CODE BLOCK: Placed on the Right Side of the Grid Row */}
+            <div className="flex flex-col items-center text-center pt-10 mt-2 md:mt-0 border-t md:border-t-0 border-slate-100">
+              <h3 className="text-xs font-bold uppercase tracking-widest text-[#009966] mb-4">Website QR Code</h3>
+              <div className="border border-slate-200 rounded-sm p-1.5 bg-white shadow-inner hover:scale-105 transition-transform">
+                <Image
+                  src="/QR.png"
+                  alt="Scan this QR code to visit our website"
+                  width={112} // reasonably sized QR code
+                  height={112}
+                  className="object-contain"
+                />
+              </div>
+              <p className="text-slate-500 text-sm mt-3">Scan to visit our full website: <span className="font-semibold text-slate-700">bioprolab.org</span></p>
             </div>
 
           </div>
@@ -73,7 +91,7 @@ export default function ContactPage() {
             allowFullScreen={true} 
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"
-            title="IIT (BHU) Varanasi Campus Map"
+            title="IIT Roorkee Campus Map" // Updated Map Title
           ></iframe>
         </div>
 
@@ -81,4 +99,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
