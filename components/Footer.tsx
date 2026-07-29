@@ -16,7 +16,7 @@ export default function Footer() {
           <div className="flex flex-col">
             <div className="flex items-center gap-2 mb-6">
               <span className="font-bold text-2xl tracking-tight text-white">
-                BioPro Lab
+                BMPL Lab
               </span>
             </div>
             <p className="text-sm leading-relaxed mb-8 text-slate-400 md:pr-10">
