@@ -79,14 +79,14 @@
       "images": [
         "/research/water1w.jpg",
         "/research/water2w.jpg",
-        "/research/water3w.jpg",
-        "/research/water4h.jpg"
+        "/research/water3i.jpg",
+        "/research/water4i.jpg"
       ],
       "projectsSection": {
         "funded": [
            {
             "title": "Water Quality Assessment of Microbiological and Heavy Metal Contamination under the Roorkee Health Intelligence Pilot (RHIP",
-            "agency": "Ashai India Glass Ltd.",
+            "agency": "Asahi India Glass Ltd.",
             "collaborator": ""
           }
         ],
