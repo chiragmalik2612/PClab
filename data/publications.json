@@ -1,26 +1,6 @@
 [
   {
     "id": "pub-1",
-    "title": "Addressing Challenges in Harvesting Algal Biomass for Pharmaceutical Applications",
-    "authors": ["Neha Goel", "H Naaz", "D Gola", "M Saxena", "Poonam Choudhary"],
-    "journal": "Algal Photobioreactors, Springer Nature (Pages: 309–361)",
-    "year": 2026,
-    "doi": "10.1007/978-981-95-8431-4_12",
-    "pdfUrl": "#",
-    "tags": ["Book Chapter"]
-  },
-  {
-    "id": "pub-2",
-    "title": "Process Engineering for Scalable Collagen Production: Upstream and Downstream Strategies for Tissue Regeneration",
-    "authors": ["Rohinish Grover", "Gyan Hritick Verma", "Pragyan Shruti Tripathy", "Arsath H", "Poonam Choudhary"],
-    "journal": "Industrial Microbiology and Biotechnology, Springer Nature",
-    "year": 2026,
-    "doi": "10.1007/978-981-95-5378-5_4",
-    "pdfUrl": "#",
-    "tags": ["Book Chapter"]
-  },
-  {
-    "id": "pub-3",
     "title": "A sequential downstream strategy for polychromatic proteins from Spirulina platensis: integrating thermo-mechano-chemical disruption with high-yield fractionation",
     "authors": ["Neha Goel", "Poonam Choudhary"],
     "journal": "Bioresource Technology Reports, Elsevier",
@@ -30,7 +10,37 @@
     "tags": ["Journal Article"]
   },
   {
+    "id": "pub-2",
+    "title": "Performance Assessment and Lab-Scale Economic Evaluation of Alkaline Extraction and Comparative Precipitation of Cyanobacterial Proteins",
+    "authors": ["Neha Goel", "Ariz Hussain", "Poonam Choudhary"],
+    "journal": "Asia-Pacific Journal of Chemical Engineering, Wiley",
+    "year": 2026,
+    "doi": "https://doi.org/10.1002/apj.70277.",
+    "pdfUrl": "#",
+    "tags": ["Journal Article"]
+  },
+  {
+    "id": "pub-3",
+    "title": "Addressing Challenges in Harvesting Algal Biomass for Pharmaceutical Applications",
+    "authors": ["Neha Goel", "H Naaz", "D Gola", "M Saxena", "Poonam Choudhary"],
+    "journal": "Algal Photobioreactors, Springer Nature (Pages: 309–361)",
+    "year": 2026,
+    "doi": "10.1007/978-981-95-8431-4_12",
+    "pdfUrl": "#",
+    "tags": ["Book Chapter"]
+  },
+  {
     "id": "pub-4",
+    "title": "Process Engineering for Scalable Collagen Production: Upstream and Downstream Strategies for Tissue Regeneration",
+    "authors": ["Rohinish Grover", "Gyan Hritick Verma", "Pragyan Shruti Tripathy", "Arsath H", "Poonam Choudhary"],
+    "journal": "Industrial Microbiology and Biotechnology, Springer Nature",
+    "year": 2026,
+    "doi": "10.1007/978-981-95-5378-5_4",
+    "pdfUrl": "#",
+    "tags": ["Book Chapter"]
+  },
+  {
+    "id": "pub-5",
     "title": "Microalgae: A Sustainable Source for Next‐Generation Nutraceuticals",
     "authors": ["Neha Goel", "Poonam Choudhary"],
     "journal": "Microbial Nutraceuticals: Products and Processes, John Wiley & Sons, Ltd",
@@ -40,7 +50,7 @@
     "tags": ["Book Chapter"]
   },
   {
-    "id": "pub-5",
+    "id": "pub-6",
     "title": "Exploring the Potential of Microbial Biomolecules in Advancing Human Health and Environmental Sustainability",
     "authors": ["Neha Goel", "Poonam Choudhary", "Lopa Pattanaik", "Susant Kumar Padhi", "Pallavi Chaudhary"],
     "journal": "Industrial Microbiology and Biotechnology: An Insight into Current Trends, Springer Nature Singapore",
